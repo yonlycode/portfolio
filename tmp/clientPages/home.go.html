@@ -1,0 +1,11 @@
+{{ define "home" }}
+    {{ template "clientHead" .Title  }}
+        {{ template "header" }}
+        {{ template "banner" }}
+        {{ template "welcome" }} 
+        {{ template "tab" }}
+        {{ template "home-feature" }}
+        {{ template "home-gallerie" }}
+        {{ template "testimonial" }}
+    {{ template "clientFoot" }}
+{{ end }}
