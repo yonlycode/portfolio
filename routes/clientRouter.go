@@ -7,7 +7,8 @@ func clientRoutes() {
 	/*
 		serve static folder "static-client" with "/" for root path
 	*/
-	A.Static("/", "./static/client")
+	A.Static("/", "./clients/user/build")
+	A.Static("/public", "./static")
 
 	/*
 		Define client pages and bind controller to them
