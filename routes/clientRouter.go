@@ -7,6 +7,7 @@ func clientRoutes() {
 	/*
 		serve static folder "static-client" with "/" for root path
 	*/
+	A.Static("/*", "./clients/user/build/index.html")
 	A.Static("/", "./clients/user/build")
 	A.Static("/public", "./static")
 
