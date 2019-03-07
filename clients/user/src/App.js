@@ -5,7 +5,13 @@ import "./assets/css/app.css";
 import "./assets/css/responsive.css"
 
 function initializeReactGA() {
-  ReactGA.initialize('UA-135789824-1');
+  ReactGA.initialize('UA-135789824-1', {
+  debug: true,
+  titleCase: false,
+  gaOptions: {
+    userId: 123
+  }
+})
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 class App extends Component {
