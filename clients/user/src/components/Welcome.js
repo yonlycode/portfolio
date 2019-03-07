@@ -13,6 +13,7 @@ export default () => {
                         c'est cet énergie , ce karma là que je veux transmettre et véhiculer , avoir la foi et croire aussi en soi même , en restant
                         toujours respectueux , travailleur , humble et modeste quoi qu'il arrive .
                         </p>
+                        <div className="LI-profile-badge"  data-version="v1" data-size="large" data-locale="fr_FR" data-type="horizontal" data-theme="dark" data-vanity="yoann-fort-91b516155"><a className="LI-simple-link" href='https://fr.linkedin.com/in/yoann-fort-91b516155?trk=profile-badge'>yoann FORT</a></div>
                     {/* <div className="row">
                             <div className="col-md-4">
                                 <div className="wel_item">

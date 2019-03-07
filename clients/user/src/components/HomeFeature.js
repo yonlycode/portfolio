@@ -16,21 +16,21 @@ export default () => {
                     <div className="feature_item">
                         <i className="fas fa-hands-helping"></i>
                         <h4>Conseil</h4>
-                        <p>Ecoute, analyse des besoins, recherche de solutions, Innosys est à vos cotés pour bien gérer vos systèmes informatiques.</p>
+                        <p>Ecoute, analyse des besoins, recherche de solutions, Je suis à vos cotés pour bien gérer vos systèmes informatiques.</p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                         <i className="fab fa-whmcs"></i>
                         <h4>Création d'application</h4>
-                        <p>Nous créons des applications spécifiques a vos besoins pour optimiser votre temps de travail et automatiser au maximum les taches redondantes.</p>
+                        <p>Je crée des applications spécifiques a vos besoins pour optimiser votre temps de travail et automatiser au maximum les taches redondantes.</p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                         <i className="fas fa-chart-bar"></i>
                         <h4>SEO & Growth Hacking</h4>
-                        <p>Accompagnement complet pour votre entreprise afin d'augmenter sa croissance et sa visibilité sur internet.</p>
+                        <p>J'accompagnement complêtement pour votre entreprise dans la démarche d'augmenter sa croissance et sa visibilité sur internet.</p>
                     </div>
                 </div>
             </div>
