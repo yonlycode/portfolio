@@ -23,14 +23,14 @@ export default () => {
                     <div className="feature_item">
                         <i className="fab fa-whmcs"></i>
                         <h4>Création d'application</h4>
-                        <p>Je crée des applications spécifiques a vos besoins pour optimiser votre temps de travail et automatiser au maximum les taches redondantes.</p>
+                        <p>Je crée des applications spécifiques a vos besoins pour optimiser votre temps de travail et automatiser au maximum vos taches redondantes.</p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                         <i className="fas fa-chart-bar"></i>
                         <h4>SEO & Growth Hacking</h4>
-                        <p>J'accompagnement complêtement pour votre entreprise dans la démarche d'augmenter sa croissance et sa visibilité sur internet.</p>
+                        <p>Je vous accompagne entièrement vous et votre entreprise dans la démarche d'augmenter sa croissance et sa visibilité sur internet.</p>
                     </div>
                 </div>
             </div>
