@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import AppRouter from './AppRouter';
 import "./assets/css/app.css";
 import "./assets/css/responsive.css"
 
+function initializeReactGA() {
+  ReactGA.initialize('UA-135789824-1');
+  ReactGA.pageview('/');
+}
 class App extends Component {
+  constructor(props){
+    super(props);
+    initializeReactGA();
+  }
   render() {
     return (
       <div className="App">

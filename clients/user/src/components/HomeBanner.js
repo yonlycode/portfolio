@@ -12,14 +12,14 @@ export default () => {
                         </div>
                         <div class="media-body">
                             <div class="personal_text">
-                                <h6>Je m'appel</h6>
+                                <h6>Mon nom est :</h6>
                                 <h3>Yoann FORT</h3>
                                 <h4>Developeur Web Junior </h4>
                                 <p>Vous serez étonné de ce dont le web est capable.</p>
                                 <ul class="list basic_info">
-                                    <li><a href="#"><i class="lnr lnr-calendar-full"></i> 17 Octobre 1996</a></li>
-                                    <li><a href="#"><i class="lnr lnr-envelope"></i> contact@eazys-dev.fr</a></li>
-                                    <li><a href="#"><i class="lnr lnr-home"></i> Paris</a></li>
+                                    <li><a href="#"><i class="fas fa-birthday-cake"></i> 17 Octobre 1996</a></li>
+                                    <li><a href="#"><i class="fas fa-at"></i> contact@eazys-dev.fr</a></li>
+                                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Paris</a></li>
                                 </ul>
                                 <ul class="list personal_social">
                                     <li><a target="blank" href="https://www.facebook.com/yoannfortr"><i class="fab fa-facebook-square"></i></a></li>

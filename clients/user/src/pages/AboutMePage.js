@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import AboutMeBanner from '../components/AboutMeBanner';
-import AboutMeWelcome from '../components/AboutMeWelcome';
-import AboutMeTestimonial from '../components/AboutMeTestimonial';
+import Welcome from '../components/Welcome';
+import Banner from '../components/HomeBanner';
+import Experience from '../components/Experience';
 
 export default class AboutMePage extends Component {
   render() {
     return (
       <div>
-        <AboutMeBanner/>
-        <AboutMeWelcome/>
-        <AboutMeTestimonial/>
+        <Banner/>
+        <Welcome/>
+        <Experience/>
       </div>
     )
   }

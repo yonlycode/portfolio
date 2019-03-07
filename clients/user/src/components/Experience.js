@@ -7,10 +7,10 @@ export default () => {
             <div class="tabs_inner">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Experiences</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Expériences</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Education</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Formations</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -20,11 +20,11 @@ export default () => {
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p>Mai 2018 à Juin 2018</p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
+                                        <h4>Développeur Web/Mobile</h4>
+                                        <p>Helium-Technologies <br />Les Abymes, Guadeloupe</p>
                                     </div>
                                 </div>
                             </li>
@@ -32,11 +32,11 @@ export default () => {
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p>Juin 2017 à Août 2016</p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
+                                        <h4>Hôte d'acceuil</h4>
+                                        <p>Office de Tourisme <br />Grand-Bourg, Marie-Galante</p>
                                     </div>
                                 </div>
                             </li>
@@ -44,11 +44,11 @@ export default () => {
                             <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p>2010 à Septembre 2015</p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
+                                        <h4>Serveur</h4>
+                                        <p>Restaurant Le Refuge<br />Baie de Saint-Louis, Marie-Galante</p>
                                     </div>
                                 </div>
                             </li>
@@ -60,23 +60,11 @@ export default () => {
                                 <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p>Octobre 2017 à Juin 2018</p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span></span>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <p>March 2017 to present</p>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
+                                        <h4>Développeur Logiciel Bac +2</h4>
+                                        <p>Simplon-Co<br />Grand-Bourg, Marie Galante</p>
                                     </div>
                                 </div>
                             </li>
@@ -84,11 +72,23 @@ export default () => {
                             <span></span>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <p>March 2017 to present</p>
+                                        <p>Septembre 2016 à Juin 2017</p>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Colorlib</h4>
-                                        <p>Senior Web Developer <br />Santa monica, Los angeles</p>
+                                        <h4>BTS Tourisme</h4>
+                                        <p>Camas Formation <br />Z.I. de Jarry , Guadeloupe</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span></span>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <p>année scolaire 2010-2014</p>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Baccalauréat Série L</h4>
+                                        <p>Lycée H.Bastaraud <br />Grand-Bourg, Marie-Galante</p>
                                     </div>
                                 </div>
                             </li>

@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
-import Banner from '../components/HomeBanner';
 import Welcome from '../components/Welcome';
+import Experience from '../components/Experience';
 import HomeFeature from '../components/HomeFeature';
-import HomeGallerie from '../components/HomeGallerie';
+import PageBanner from '../components/PageBanner';
 
 export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <Banner/>
+        <PageBanner 
+          CurrentPage="Home"
+          CurrentUri="/"
+        />
         <Welcome/>
+        <Experience/>
         <HomeFeature/>
-        <HomeGallerie/>
+        {/* <HomeGallerie/> */}
       </div>
     )
   }
