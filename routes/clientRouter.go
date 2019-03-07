@@ -15,7 +15,7 @@ func clientRoutes() {
 	A.File("/about-me", "./clients/user/build/index.html")
 	A.File("/contact", "./clients/user/build/index.html")
 	A.File("/works", "./clients/user/build/index.html")
-	A.File("/service", "./clients/user/build/index.html")
+	A.File("/services", "./clients/user/build/index.html")
 	A.File("/blog", "./clients/user/build/index.html")
 
 	/*
