@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import ServiceFeature from '../components/ServiceFeature';
-import ServiceTestimonial from '../components/ServiceTestimonial';
+import HomeFeature from '../components/HomeFeature';
 import PageBanner from '../components/PageBanner';
 
 export default class ServicePage extends Component {
@@ -11,8 +10,7 @@ export default class ServicePage extends Component {
           CurrentPage="Services"
           CurrentUri="service"
         />
-        <ServiceFeature/>
-        <ServiceTestimonial/>
+        <HomeFeature/>
       </div>
     )
   }

@@ -6,7 +6,7 @@ import "./assets/css/responsive.css"
 
 function initializeReactGA() {
   ReactGA.initialize('UA-135789824-1');
-  ReactGA.pageview('/');
+  ReactGA.pageview(window.location.pathname + window.location.search);
 }
 class App extends Component {
   constructor(props){

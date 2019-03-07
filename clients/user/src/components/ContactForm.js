@@ -2,48 +2,48 @@ import React from 'react'
 
 export default () => {
   return (
-    <section class="contact_area p_120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <i class="lnr lnr-home"></i>
-                            <h6>California, United States</h6>
-                            <p>Santa monica bullevard</p>
+    <section className="contact_area p_120">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-3">
+                    <div className="contact_info">
+                        <div className="info_item">
+                            <i className="lnr lnr-home"></i>
+                            <h6>Paris, France</h6>
+                            <p>Gagny</p>
                         </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-phone-handset"></i>
+                        {/* <div className="info_item">
+                            <i className="lnr lnr-phone-handset"></i>
                             <h6><a href="#">00 (440) 9865 562</a></h6>
                             <p>Mon to Fri 9am to 6 pm</p>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-envelope"></i>
-                            <h6><a href="#">support@colorlib.com</a></h6>
-                            <p>Send us your query anytime!</p>
+                        </div> */}
+                        <div className="info_item">
+                            <i className="lnr lnr-envelope"></i>
+                            <h6><a href="#">contact@eazys-dev.fr</a></h6>
+                            <p>Toujours présent en cas de besoin.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"/>
+                <div className="col-lg-9">
+                    <form className="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <input type="text" className="form-control" id="name" name="name" placeholder="Entrez votre nom"/>
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address"/>
+                            <div className="form-group">
+                                <input type="email" className="form-control" id="email" name="email" placeholder="Entrez votre addresse email"/>
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject"/>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                            <div className="form-group">
+                                <input type="text" className="form-control" id="subject" name="subject" placeholder="Entrez votre sujet"/>
                             </div>
                         </div>
-                        <div class="col-md-12 text-right">
-                            <button type="submit" value="submit" class="btn submit_btn">Send Message</button>
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <textarea className="form-control" name="message" id="message" rows="1" placeholder="Entrez votre Message"></textarea>
+                            </div>
+                        </div>
+                        <div className="col-md-12 text-right">
+                            <button type="submit" value="submit" className="btn submit_btn">Envoyer</button>
                         </div>
                     </form>
                 </div>

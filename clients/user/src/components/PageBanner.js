@@ -2,13 +2,13 @@ import React from 'react'
 
 export default (props) => {
   return (
-    <section class="banner_area">
-        <div class="box_1620">
-            <div class="banner_inner d-flex align-items-center">
-                <div class="container">
-                    <div class="banner_content text-center">
+    <section className="banner_area">
+        <div className="box_1620">
+            <div className="banner_inner d-flex align-items-center">
+                <div className="container">
+                    <div className="banner_content text-center">
                         <h2>{props.CurrentPage} </h2>
-                        {props.CurrentPage!="Home"?<div class="page_link">
+                        {props.CurrentPage!="Home"?<div className="page_link">
                             <a href="/">Home</a>
                             <a href={"/#/"+props.CurrentUri}>{props.CurrentPage}</a> </div>:<span></span>}                        
                     </div>

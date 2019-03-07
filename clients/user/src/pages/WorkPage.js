@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PageBanner from '../components/PageBanner';
-import WorkGallery from '../components/WorkGallery';
+import HomeGallerie from '../components/HomeGallerie';
 
 export default class WorkPage extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class WorkPage extends Component {
               CurrentPage="Portfolio"
               CurrentUri="works"
             />
-            <WorkGallery/>
+            <HomeGallerie/>
       </div>
     )
   }

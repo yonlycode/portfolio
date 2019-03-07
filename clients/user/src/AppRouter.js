@@ -12,6 +12,7 @@ import ServicePage from './pages/ServicePage';
 import AboutMePage from './pages/AboutMePage';
 import WorkPage from './pages/WorkPage';
 import BlogPage from './pages/BlogPage';
+import OnBuildPage from './pages/OnBuildPage'
 
 export default class AppRouter extends Component {
 
@@ -33,8 +34,8 @@ export default class AppRouter extends Component {
                 <Route path="/contact" component={ContactPage} />
                 <Route path="/services" component={ServicePage} />
                 <Route path="/about-me" component={AboutMePage} />
-                <Route path="/works" component={WorkPage} />
-                <Route path="/blog" component={BlogPage} />
+                <Route path="/works" component={OnBuildPage} />
+                <Route path="/blog" component={OnBuildPage} />
             </Switch>
             <Footer/> 
           </div>
