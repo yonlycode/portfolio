@@ -25,7 +25,7 @@ export default () => {
                                 <div className="input-group d-flex flex-row">
                                     <input name="EMAIL" placeholder="Entrez votre adresse email" required="" type="email"></input>
                                     <button className="btn sub-btn">
-                                        <i class="fas fa-envelope"></i>
+                                        <i className="fas fa-envelope"></i>
                                     </button>	
                                 </div>				
                                 <div className="mt-10 info"></div>

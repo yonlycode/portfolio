@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Typed from 'react-typed';
+
 
 export default () => {
   return (
@@ -14,7 +16,21 @@ export default () => {
                             <div class="personal_text">
                                 <h6>Mon nom est :</h6>
                                 <h3>Yoann FORT</h3>
-                                <h4>Developeur Web Junior </h4>
+                                <div id="typed">
+                                    <Typed 
+                                        strings={['JE SUIS']} 
+                                        typeSpeed={50} 
+                                    />
+                                    <br/>
+
+                                    <Typed 
+                                    strings={[
+                                        "Dévelopeur Web", "Growth Hacker","Passionné de Web "]}
+                                        typeSpeed={70}
+                                        backSpeed={80} 
+                                        loop >
+                                    </Typed>
+                                </div>
                                 <p>Vous serez étonné de ce dont le web est capable.</p>
                                 <ul class="list basic_info">
                                     <li><a href="#"><i class="fas fa-birthday-cake"></i> 17 Octobre 1996</a></li>
