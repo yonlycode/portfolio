@@ -6,10 +6,9 @@ import "./assets/css/responsive.css"
 
 function initializeReactGA() {
   ReactGA.initialize('UA-135789824-1', {
-  debug: true,
-  titleCase: false,
+  debug: false,
   gaOptions: {
-    userId: 123
+    siteSpeedSampleRate: 100
   }
 })
   ReactGA.pageview(window.location.pathname + window.location.search);
