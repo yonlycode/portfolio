@@ -17,14 +17,14 @@ export default () => {
                     {/*Collect the nav links, forms, and other content for toggling*/}
                     <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul className="nav navbar-nav menu_nav ml-auto">
-                            <li className="nav-item"><Link className="nav-link" to="/">Acceuil</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="/about-me">À propos</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="/works">Portfolio</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="/services">Services</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="/blog">Blog</Link></li>  
-                            <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
+                            <li className="nav-item"><a className="nav-link" href="/">Acceuil</a></li> 
+                            <li className="nav-item"><a className="nav-link" href="/about-me">À propos</a></li> 
+                            <li className="nav-item"><a className="nav-link" href="/works">Portfolio</a></li> 
+                            <li className="nav-item"><a className="nav-link" href="/services">Services</a></li> 
+                            <li className="nav-item"><a className="nav-link" href="/blog">Blog</a></li>  
+                            <li className="nav-item"><a className="nav-link" href="/contact">Contact</a></li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
             </nav>
         </div>
