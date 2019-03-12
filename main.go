@@ -28,6 +28,8 @@ func init() {
 	*/
 	a = echo.New()
 
+	//a.Use(middlewares.BadURIHandler)
+
 	/*
 		Pass Application pointer to routes packages then binding router to app
 	*/
@@ -69,5 +71,4 @@ func dbConnection() {
 		sync @dbAccess to controller's modules
 	*/
 	controllers.Dba = &dba
-	controllers.SyncDba()
 }

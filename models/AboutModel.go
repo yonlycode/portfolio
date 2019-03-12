@@ -6,7 +6,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-//AdminModel is structure of an account on a social network
+//AboutModel is structure of an account on a social network
 type AboutModel struct {
 	ID           bson.ObjectId `bson:"_id" json:"_id" binding:"required"`
 	FirstName    string        `bson:"first_name" json:"first_name" binding:"required"`

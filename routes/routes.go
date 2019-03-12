@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"portfolio/routes/api"
+
 	"github.com/labstack/echo"
 )
 
@@ -11,4 +13,7 @@ var A *echo.Echo
 func SetRoutes() {
 	clientRoutes()
 	adminRoutes()
+	api.HandlePortfolioAPI(A)
+	api.HandleBlogAPI(A)
+	api.HandleAdminAPI(A)
 }
