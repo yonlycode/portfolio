@@ -16,4 +16,8 @@ func SetRoutes() {
 	api.HandlePortfolioAPI(A)
 	api.HandleBlogAPI(A)
 	api.HandleAdminAPI(A)
+	api.HandleExperienceAPI(A)
+	api.HandleEducationAPI(A)
+	api.HandleSocialAPI(A)
+
 }

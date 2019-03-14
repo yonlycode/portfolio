@@ -72,7 +72,7 @@ func UpdateWorkEndPoint(c echo.Context) error {
 
 // DeleteWorkEndPoint delete post by admin
 func DeleteWorkEndPoint(c echo.Context) error {
-	err := Dba.DeleteBlogPost(c.Param("id"))
+	err := Dba.DeletePortfolioProject(c.Param("id"))
 	if err != nil {
 		return c.String(500, "error : "+err.Error())
 	}
