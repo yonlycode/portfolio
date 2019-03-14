@@ -7,37 +7,37 @@ import (
 )
 
 const (
-	blogPostCol = "blog"
+	blogPostCollection = "blog"
 )
 
 //FindAllBlogPosts return all posts
 func (m *DbAccess) FindAllBlogPosts() ([]models.BlogPostModel, error) {
 	var posts []models.BlogPostModel
-	err := db.C(blogPostCol).Find(bson.M{}).Sort("-date").All(&posts)
+	err := db.C(blogPostCollection).Find(bson.M{}).Sort("-created").All(&posts)
 	return posts, err
 }
 
 //FindBlogPostByID return blog post
 func (m *DbAccess) FindBlogPostByID(id string) (models.BlogPostModel, error) {
 	var post models.BlogPostModel
-	err := db.C(blogPostCol).FindId(bson.ObjectIdHex(id)).One(&post)
+	err := db.C(blogPostCollection).FindId(bson.ObjectIdHex(id)).One(&post)
 	return post, err
 }
 
 //InsertBlogPost add blogpost
 func (m *DbAccess) InsertBlogPost(post models.BlogPostModel) error {
-	err := db.C(blogPostCol).Insert(&post)
+	err := db.C(blogPostCollection).Insert(&post)
 	return err
 }
 
 //DeleteBlogPost delete a blogpost
 func (m *DbAccess) DeleteBlogPost(id string) error {
-	err := db.C(blogPostCol).RemoveId(bson.ObjectIdHex(id))
+	err := db.C(blogPostCollection).RemoveId(bson.ObjectIdHex(id))
 	return err
 }
 
 //UpdateBlogPost upade blog post data
 func (m *DbAccess) UpdateBlogPost(post models.BlogPostModel, id string) error {
-	err := db.C(blogPostCol).Update(bson.M{"_id": bson.ObjectIdHex(id)}, post)
+	err := db.C(blogPostCollection).Update(bson.M{"_id": bson.ObjectIdHex(id)}, post)
 	return err
 }
