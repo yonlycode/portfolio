@@ -24,6 +24,13 @@ func (m *DbAccess) FindSubByID(id string) (models.NewsLetterSubscriverModel, err
 	return sub, err
 }
 
+//FindSubByMail return admin
+func (m *DbAccess) FindSubByMail(mail string) (models.NewsLetterSubscriverModel, error) {
+	var sub models.NewsLetterSubscriverModel
+	err := db.C(newletterSubsCollection).Find(bson.M{"mail": mail}).One(&sub)
+	return sub, err
+}
+
 //InsertSub insert a work Experience
 func (m *DbAccess) InsertSub(sub models.NewsLetterSubscriverModel) error {
 	err := db.C(newletterSubsCollection).Insert(&sub)

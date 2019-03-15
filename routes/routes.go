@@ -11,13 +11,19 @@ var A *echo.Echo
 
 /*SetRoutes bind routes to the application */
 func SetRoutes() {
+
+	A.Static("/public", "./static")
+
+	/* Serve react static application on router */
 	clientRoutes()
-	adminRoutes()
+
+	/* Handle server actions on router */
 	api.HandlePortfolioAPI(A)
 	api.HandleBlogAPI(A)
 	api.HandleAdminAPI(A)
 	api.HandleExperienceAPI(A)
 	api.HandleEducationAPI(A)
 	api.HandleSocialAPI(A)
+	api.HandleSubsAPI(A)
 
 }

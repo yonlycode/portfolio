@@ -2,7 +2,9 @@ package controllers
 
 import (
 	"log"
+	"net/http"
 	"portfolio/models"
+	"portfolio/utils"
 	"time"
 
 	"github.com/labstack/echo"
@@ -77,4 +79,39 @@ func DeleteSubEndPoint(c echo.Context) error {
 		return c.String(500, "error : "+err.Error())
 	}
 	return c.JSON(200, "deleted successfully")
+}
+
+//HandleNewSubscriber new subscriver handler end point
+func HandleNewSubscriber(c echo.Context) error {
+
+	//set Model
+	var m models.NewsLetterSubscriverModel
+
+	//bind data to model
+	if err := c.Bind(&m); err != nil {
+		return c.String(422, "error : "+err.Error())
+	}
+
+	//check if mail is already registered to db
+	checkInDb, err := Dba.FindSubByMail(m.Mail)
+	if err != nil {
+		//if mail is valid
+		if utils.IsMail(m.Mail) {
+			//generate id/date and hash password
+			m.ID = bson.NewObjectId()
+			m.Created = time.Now()
+
+			//insert to model to database
+			if err := Dba.InsertSub(m); err != nil {
+				return c.String(500, "error : "+err.Error())
+			}
+
+			return c.JSON(200, "added to newsletter list successfully")
+		}
+		//else
+		return c.JSON(http.StatusBadRequest, "need a valid mail")
+
+	}
+	return c.JSON(http.StatusBadRequest, "mail "+checkInDb.Mail+" already registered")
+
 }

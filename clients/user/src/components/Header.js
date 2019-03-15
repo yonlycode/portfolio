@@ -16,7 +16,7 @@ export default () => {
                     </button>
                     {/*Collect the nav links, forms, and other content for toggling*/}
                     <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul className="nav navbar-nav menu_nav ml-auto">
+                        <ul id="margin-bot-60" className="nav navbar-nav menu_nav ml-auto">
                             <li className="nav-item"><a className="nav-link" href="/">Acceuil</a></li> 
                             <li className="nav-item"><a className="nav-link" href="/about-me">À propos</a></li> 
                             <li className="nav-item"><a className="nav-link" href="/works">Portfolio</a></li> 
