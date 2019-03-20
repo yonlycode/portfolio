@@ -14,9 +14,6 @@ func SetRoutes() {
 
 	A.Static("/public", "./static")
 
-	/* Serve react static application on router */
-	clientRoutes()
-
 	/* Handle server actions on router */
 	api.HandlePortfolioAPI(A)
 	api.HandleBlogAPI(A)
@@ -26,4 +23,6 @@ func SetRoutes() {
 	api.HandleSocialAPI(A)
 	api.HandleSubsAPI(A)
 
+	/* Serve react static application on router */
+	clientRoutes()
 }

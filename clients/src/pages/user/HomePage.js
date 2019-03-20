@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Welcome from '../components/Welcome';
-import Experience from '../components/Experience';
-import HomeFeature from '../components/HomeFeature';
-import PageBanner from '../components/PageBanner';
+import Welcome from '../../components/Welcome';
+import Experience from '../../components/Experience';
+import HomeFeature from '../../components/HomeFeature';
+import PageBanner from '../../components/PageBanner';
 
 export default class HomePage extends Component {
   render() {

@@ -68,6 +68,7 @@ func UpdateSubEndPoint(c echo.Context) error {
 		log.Println(err)
 		return c.String(500, "error : "+err.Error())
 	}
+
 	//return success
 	return c.String(200, "Sub Updated successfully")
 }

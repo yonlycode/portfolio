@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import BlogBanner from "../components/BlogBanner";
-import BlogCategory from "../components/BlogCategory";
-import BlogList from "../components/BlogList";
+import BlogBanner from "../../components/BlogBanner";
+import BlogCategory from "../../components/BlogCategory";
+import BlogList from "../../components/BlogList";
 export default class BlogPage extends Component {
   render() {
     return (

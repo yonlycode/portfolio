@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import "../assets/css/machine.css"
-import PageBanner from '../components/PageBanner';
+import "../../assets/css/machine.css"
+import PageBanner from '../../components/PageBanner';
 export default class OnBuildPage extends Component {
   render() {
     return (

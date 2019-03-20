@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PageBanner from '../components/PageBanner';
-import ContactForm from '../components/ContactForm';
+import PageBanner from '../../components/PageBanner';
+import ContactForm from '../../components/ContactForm';
 
 export default class ContactPage extends Component {
   render() {
