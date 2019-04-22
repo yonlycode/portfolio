@@ -8,6 +8,8 @@ import (
 	"portfolio/utils"
 
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 var (
@@ -19,7 +21,7 @@ var (
 func init() {
 
 	/*
-		Load Env variables from ".env" root directory see .exmple.env for exemple
+		Load Env variables from ".env" root directory see .exmpla.env for exemple
 	*/
 	utils.DotEnv()
 
@@ -48,11 +50,36 @@ func init() {
 }
 
 func main() {
+	/* If prod is true in .env file */
+	if os.Getenv("PROD") == "true" {
 
-	/*
-		Starting app
-	*/
-	a.Logger.Fatal(a.Start(os.Getenv("PORT")))
+		/* dns autorisation */
+		a.AutoTLSManager.HostPolicy = autocert.HostWhitelist("yoannfort.ga", "localhost")
+
+		/* cache file */
+		a.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")
+
+		/* Http server */
+		go func(c *echo.Echo) {
+			/* https redirection */
+			a.Pre(middleware.HTTPSWWWRedirect())
+
+			a.Logger.Fatal(a.Start(os.Getenv("HTTP_PORT")))
+		}(a)
+
+		/* https redirection */
+		a.Pre(middleware.HTTPSWWWRedirect())
+
+		/* Https server */
+		a.Logger.Fatal(a.StartAutoTLS(os.Getenv("HTTPS")))
+
+	} else {
+		/*
+			Starting app
+		*/
+		a.Logger.Fatal(a.Start(os.Getenv("PORT")))
+	}
+
 }
 
 /*

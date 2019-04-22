@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"le-refuge/utils"
 	"os"
+	"portfolio/utils"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
