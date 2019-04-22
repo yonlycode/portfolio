@@ -43,7 +43,7 @@ export default class AppRouter extends Component {
         <Route path="/about-me" component={AboutMePage} />
         <Route path="/works" component={OnBuildPage} />
         <Route path="/blog" component={OnBuildPage} />
-        <Route path="/admin" component={AdminLoginPage} />
+        {/* <Route path="/admin" component={AdminLoginPage} /> */}
       </Switch>
     )
 

@@ -18,6 +18,15 @@ class App extends Component {
     super(props);
     initializeReactGA();
   }
+  componentDidMount(){
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      
+    } else {
+      if(window.location.protocol != "https:"){
+        window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
+    }
+  }
   render() {
     return (
       <div className="App">

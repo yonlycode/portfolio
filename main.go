@@ -54,7 +54,7 @@ func main() {
 	if os.Getenv("PROD") == "true" {
 
 		/* dns autorisation */
-		a.AutoTLSManager.HostPolicy = autocert.HostWhitelist("yoannfort.ga", "localhost")
+		a.AutoTLSManager.HostPolicy = autocert.HostWhitelist("yoannfort.ga", "www.yoannfort.ga")
 
 		/* cache file */
 		a.AutoTLSManager.Cache = autocert.DirCache("/var/www/.cache")

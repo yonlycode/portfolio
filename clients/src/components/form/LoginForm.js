@@ -15,7 +15,7 @@ export default class LoginForm extends Component {
 
     /* get jwt  */
     checkLogin=()=>{
-        axios.get(url , {
+        axios.get("/" , {
             mail:this.state.mail,
             password:this.state.password
         })
