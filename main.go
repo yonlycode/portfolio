@@ -64,11 +64,16 @@ func main() {
 			/* https redirection */
 			a.Pre(middleware.HTTPSWWWRedirect())
 
-			a.Logger.Fatal(a.Start(os.Getenv("HTTP_PORT")))
+			a.Logger.Fatal(a.Start(os.Getenv("HTTP")))
+
 		}(a)
 
 		/* https redirection */
 		a.Pre(middleware.HTTPSWWWRedirect())
+		a.Use(middleware.Secure())
+		a.Use(middleware.GzipWithConfig(middleware.GzipConfig{
+			Level: 5,
+		}))
 
 		/* Https server */
 		a.Logger.Fatal(a.StartAutoTLS(os.Getenv("HTTPS")))
@@ -77,7 +82,7 @@ func main() {
 		/*
 			Starting app
 		*/
-		a.Logger.Fatal(a.Start(os.Getenv("PORT")))
+		a.Logger.Fatal(a.Start(os.Getenv("HTTP")))
 	}
 
 }
