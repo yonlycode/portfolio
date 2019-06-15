@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LoginForm from '../../components/form/LoginForm';
+import LoginForm from '../../components/forms/Login-Form/LoginForm';
 import "../../assets/css/adminLoginForm.css"
-import PageBanner from '../../components/PageBanner';
+import PageBanner from '../../components/stateless/banners/PageBanner';
 
 export default class AdminLoginPage extends Component {
   render() {

@@ -43,10 +43,6 @@ func init() {
 	*/
 	dbConnection()
 
-	/*
-		Parse template and attach tmp engine to application render function
-	*/
-	utils.SetTmpEngine(a)
 }
 
 func main() {

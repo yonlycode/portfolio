@@ -23,6 +23,9 @@ func SetRoutes() {
 	api.HandleSocialAPI(A)
 	api.HandleSubsAPI(A)
 
-	/* Serve react static application on router */
-	clientRoutes()
+	/*Set redirection to application on 404  */
+	A.HTTPErrorHandler = func(err error, c echo.Context) {
+		// render 404 page
+		c.File("./client/build/index.html")
+	}
 }

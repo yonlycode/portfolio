@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/layout/header/Header';
+import Footer from './components/layout/footer/Footer';
 
 
 import HomePage from './pages/user/HomePage';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PageBanner from '../../components/PageBanner';
+import PageBanner from '../../components/stateless/banners/PageBanner';
 
 export default class AdminHomePage extends Component {
   render() {
