@@ -1,77 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Analytics from 'react-router-ga';
 
-
+/* Layout generic import */
 import Header from './components/layout/header/Header';
 import Footer from './components/layout/footer/Footer';
 
+/* Page component lazy import */
 
-import HomePage from './pages/user/HomePage';
-import ContactPage from './pages/user/ContactPage';
-import ServicePage from './pages/user/ServicePage';
-import AboutMePage from './pages/user/AboutMePage';
-import WorkPage from './pages/user/WorkPage';
-import BlogPage from './pages/user/BlogPage';
-import OnBuildPage from './pages/user/OnBuildPage'
+const HomePage = lazy(()=>import('./pages/user/HomePage'))
+const ContactPage = lazy(()=>import('./pages/user/ContactPage'))
+const ServicePage = lazy(()=>import('./pages/user/ServicePage'))
+const AboutMePage = lazy(()=>import('./pages/user/AboutMePage'))
+const OnBuildPage = lazy(()=>import('./pages/user/OnBuildPage'))
+const AdminLoginPage = lazy(()=>import('./pages/admin/AdminLoginPage'))
+const WorkPage = lazy(()=>import('./pages/user/WorkPage'))
+const BlogPage = lazy(()=>import('./pages/user/BlogPage'))
+const AdminHomePage = lazy(()=>import('./pages/admin/AdminHomePage'))
 
-import AdminLoginPage from './pages/admin/AdminLoginPage'
-import AdminHomePage from './pages/admin/AdminHomePage';
 
 export default class AppRouter extends Component {
-
-    constructor(props){
-        super(props);
-        this.state={
-            isAuth:false,
-        }
-    }
-
-    handleAuth=()=>{
-
-    }
-
-    
   render() {
-    const { isAuth } = this.state
-
-    /* if user is not authentified, app will use this router */
-    const anonRoute = (
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/services" component={ServicePage} />
-        <Route path="/about-me" component={AboutMePage} />
-        <Route path="/works" component={OnBuildPage} />
-        <Route path="/blog" component={OnBuildPage} />
-        {/* <Route path="/admin" component={AdminLoginPage} /> */}
-      </Switch>
-    )
-
-    /* if user is authentified, app will use this router */
-    const adminRoute = (
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/services" component={ServicePage} />
-        <Route path="/about-me" component={AboutMePage} />
-        <Route path="/works" component={OnBuildPage} />
-        <Route path="/blog" component={OnBuildPage} />
-        <Route path="/admin" component={AdminHomePage} />
-
-      </Switch>
-    )
-
     return (
         <Router>
-          <div>
+          <Analytics id="UA-135789824-1" debug>
             <Header/>
-                {
-                  //change router on auth
-                  isAuth ? adminRoute : anonRoute
-                }
+              <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/contact" component={ContactPage} />
+                <Route path="/services" component={ServicePage} />
+                <Route path="/about-me" component={AboutMePage} />
+                <Route path="/works" component={OnBuildPage} />
+                <Route path="/blog" component={OnBuildPage} />
+                {/* <Route path="/admin" component={AdminLoginPage} /> */}
+              </Switch>
             <Footer/> 
-          </div>
-            
+          </Analytics>          
       </Router>
     )
   }

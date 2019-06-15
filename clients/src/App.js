@@ -1,39 +1,32 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
 import AppRouter from './AppRouter';
 import "./assets/css/app.css";
 import "./assets/css/responsive.css"
+import ActivityIndicator from './components/stateless/Activity-Indicator/ActivityIndicator';
+import ErrorBoundary from './components/layout/Error-Boundary/ErrorBoundary';
 
-function initializeReactGA() {
-  ReactGA.initialize('UA-135789824-1', {
-  debug: false,
-  gaOptions: {
-    siteSpeedSampleRate: 100
-  }
-})
-  ReactGA.pageview(window.location.pathname + window.location.search);
-}
-class App extends Component {
-  constructor(props){
-    super(props);
-    initializeReactGA();
-  }
+
+export default class App extends Component {
+
   componentDidMount(){
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       
     } else {
-      if(window.location.protocol != "https:"){
+      if(window.location.protocol !== "https:"){
         window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
       }
     }
   }
   render() {
     return (
-      <div className="App">
-          <AppRouter/>
-      </div>
+      <ErrorBoundary>
+        <React.Suspense fallback={ActivityIndicator}>
+          <div className="App">
+            <AppRouter/>
+          </div>
+        </React.Suspense>
+      </ErrorBoundary>
     );
   }
 }
 
-export default App;

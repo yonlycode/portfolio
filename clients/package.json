@@ -1,16 +1,17 @@
 {
   "name": "portfolio-client",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.3",
+    "react-admin": "^2.9.2",
     "react-dom": "^16.8.3",
-    "react-ga": "^2.5.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-router-ga": "^1.2.0",
     "react-scripts": "^3.0.1",
-    "react-typed": "^1.1.0"
+    "react-typed": "^1.1.0",
+    "reactstrap": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
