@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"portfolio/routes/actions"
 	"portfolio/routes/api"
 
 	"github.com/labstack/echo"
@@ -22,6 +23,7 @@ func SetRoutes() {
 	api.HandleEducationAPI(A)
 	api.HandleSocialAPI(A)
 	api.HandleSubsAPI(A)
+	actions.HandleConnection(A)
 
 	/*Set redirection to application on 404  */
 	A.HTTPErrorHandler = func(err error, c echo.Context) {

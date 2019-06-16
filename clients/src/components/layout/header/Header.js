@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import LogoutButton from '../../Buttons/Logout-Button/LogoutButton';
 
-export default () => {
+export default (props) => {
   return (
     <header className="header_area">
         <div className="main_menu">
@@ -23,6 +24,9 @@ export default () => {
                             <li className="nav-item"><Link className="nav-link" to="services">Services</Link></li> 
                             <li className="nav-item"><Link className="nav-link" to="blog">Blog</Link></li>  
                             <li className="nav-item"><Link className="nav-link" to="contact">Contact</Link></li>
+                            {
+                                window.localStorage.getItem('token')!==null?<LogoutButton/>:""
+                            }
                         </ul>
                     </div>
                 </div>

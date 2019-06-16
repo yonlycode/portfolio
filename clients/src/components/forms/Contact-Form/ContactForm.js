@@ -32,17 +32,17 @@ export default class ContactForm extends Component {
                 errMsg:"ceci n'est pas une adresse email valide"
             })
         }
-        else if(this.state.name == ""){
+        else if(this.state.name === ""){
             this.setState({
                 errMsg:"vous n'avez pas saisie de nom"
             })
         }
-        else if(this.state.subject == ""){
+        else if(this.state.subject === ""){
             this.setState({
                 errMsg:"vous n'avez pas saisie de sujet"
             })
         }
-        else if(this.state.message == ""){
+        else if(this.state.message === ""){
             this.setState({
                 errMsg:"vous n'avez pas saisie de message"
             })
@@ -57,6 +57,8 @@ export default class ContactForm extends Component {
     handleSend=()=>{
 
     }
+
+    
   render() {
     const { errMsg, successMsg, name, mail, subject, message } = this.state;
     const { handleAlertHide, handleCheckForm } = this
