@@ -43,11 +43,18 @@ func init() {
 	*/
 	dbConnection()
 
+	utils.HaveAdminRegister(dba)
+
 }
 
 func main() {
+	a.Pre(middleware.RemoveTrailingSlash())
 	/* If prod is true in .env file */
 	if os.Getenv("PROD") == "true" {
+		a.Use(middleware.Secure())
+		a.Use(middleware.GzipWithConfig(middleware.GzipConfig{
+			Level: 5,
+		}))
 
 		/* dns autorisation */
 		a.AutoTLSManager.HostPolicy = autocert.HostWhitelist("yoannfort.ga", "www.yoannfort.ga")
@@ -63,13 +70,6 @@ func main() {
 			a.Logger.Fatal(a.Start(os.Getenv("HTTP")))
 
 		}(a)
-
-		/* https redirection */
-		a.Pre(middleware.HTTPSWWWRedirect())
-		a.Use(middleware.Secure())
-		a.Use(middleware.GzipWithConfig(middleware.GzipConfig{
-			Level: 5,
-		}))
 
 		/* Https server */
 		a.Logger.Fatal(a.StartAutoTLS(os.Getenv("HTTPS")))

@@ -7,16 +7,16 @@ import (
 )
 
 /*HandleSubsAPI bind subs api router to @e app  */
-func HandleSubsAPI(e *echo.Echo) {
+func HandleSubsAPI(e *echo.Group) {
 
 	/* Api routes */
-	e.GET("/api/social-network", controllers.AllSocialNetworksEndPoint)
+	e.GET("/social-network", controllers.AllSocialNetworksEndPoint)
 
-	e.POST("/api/social-network", controllers.CreateSocialNetworkEndPoint)
+	e.POST("/social-network", controllers.CreateSocialNetworkEndPoint)
 
-	e.PUT("/api/social-network/:id", controllers.UpdateSocialNetworkEndPoint)
+	e.PUT("/social-network/:id", controllers.UpdateSocialNetworkEndPoint)
 
-	e.DELETE("/api/social-network/:id", controllers.DeleteSocialNetworkEndPoint)
+	e.DELETE("/social-network/:id", controllers.DeleteSocialNetworkEndPoint)
 
 	/* Action routes */
 

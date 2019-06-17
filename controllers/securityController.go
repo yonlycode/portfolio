@@ -56,5 +56,5 @@ func AdminLoginActionEndPoint(c echo.Context) error {
 	}
 
 	/* If bad password */
-	return c.String(301, "Bad Password")
+	return echo.ErrUnauthorized
 }

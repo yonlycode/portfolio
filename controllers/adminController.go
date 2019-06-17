@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"portfolio/models"
 	"portfolio/utils"
 	"time"
@@ -11,6 +12,7 @@ import (
 
 // AllAdminsEndPoint ( ) => all admins
 func AllAdminsEndPoint(c echo.Context) error {
+	fmt.Println("hey")
 	admins, err := Dba.FindAllAdmins()
 	if err != nil {
 		return c.String(500, "error : "+err.Error())

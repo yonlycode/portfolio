@@ -7,14 +7,14 @@ import (
 )
 
 /*HandleBlogAPI bind user api router to @e app  */
-func HandleBlogAPI(e *echo.Echo) {
-	e.GET("/api/blog", controllers.AllBlogPostsEndPoint)
+func HandleBlogAPI(e *echo.Group) {
+	e.GET("/blog", controllers.AllBlogPostsEndPoint)
 
-	e.GET("/api/blog/:id", controllers.FindBlogPostByIDEndPoint)
+	e.GET("/blog/:id", controllers.FindBlogPostByIDEndPoint)
 
-	e.POST("/api/blog", controllers.CreateBlogPostEndPoint)
+	e.POST("/blog", controllers.CreateBlogPostEndPoint)
 
-	e.PUT("/api/blog/:id", controllers.UpdateBlogPostEndPoint)
+	e.PUT("/blog/:id", controllers.UpdateBlogPostEndPoint)
 
-	e.DELETE("/api/blog/:id", controllers.DeleteBlogPostEndPoint)
+	e.DELETE("/blog/:id", controllers.DeleteBlogPostEndPoint)
 }

@@ -7,14 +7,14 @@ import (
 )
 
 /*HandleAdminAPI bind user api router to @e app  */
-func HandleAdminAPI(e *echo.Echo) {
-	e.GET("/api/admin", controllers.AllAdminsEndPoint)
+func HandleAdminAPI(e *echo.Group) {
+	e.GET("/admin", controllers.AllAdminsEndPoint)
 
-	e.POST("/api/admin", controllers.CreateAdminEndPoint)
+	e.POST("/admin", controllers.CreateAdminEndPoint)
 
-	e.PUT("/api/admin/:id", controllers.UpdateAdminEndPoint)
+	e.PUT("/admin/:id", controllers.UpdateAdminEndPoint)
 
-	e.GET("/api/admin/:id", controllers.FindAdminByIDEndPoint)
+	e.GET("/admin/:id", controllers.FindAdminByIDEndPoint)
 
-	e.DELETE("/api/admin/:id", controllers.DeleteAdminEndPoint)
+	e.DELETE("/admin/:id", controllers.DeleteAdminEndPoint)
 }

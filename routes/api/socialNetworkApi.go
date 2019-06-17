@@ -7,14 +7,14 @@ import (
 )
 
 /*HandleSocialAPI bind subs api router to @e app  */
-func HandleSocialAPI(e *echo.Echo) {
-	e.GET("/api/sub", controllers.AllSubsEndPoint)
+func HandleSocialAPI(e *echo.Group) {
+	e.GET("/sub", controllers.AllSubsEndPoint)
 
-	e.POST("/api/sub", controllers.CreateSubEndPoint)
+	e.POST("/sub", controllers.CreateSubEndPoint)
 
-	e.PUT("/api/sub/:id", controllers.UpdateSubEndPoint)
+	e.PUT("/sub/:id", controllers.UpdateSubEndPoint)
 
-	e.GET("/api/sub/:id", controllers.FindSubByIDEndPoint)
+	e.GET("/sub/:id", controllers.FindSubByIDEndPoint)
 
-	e.DELETE("/api/sub/:id", controllers.DeleteSubEndPoint)
+	e.DELETE("/sub/:id", controllers.DeleteSubEndPoint)
 }

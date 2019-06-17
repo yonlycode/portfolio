@@ -7,14 +7,14 @@ import (
 )
 
 /*HandleExperienceAPI bind user api router to @e app  */
-func HandleExperienceAPI(e *echo.Echo) {
-	e.GET("/api/experience", controllers.AllExperiencesEndPoint)
+func HandleExperienceAPI(e *echo.Group) {
+	e.GET("/experience", controllers.AllExperiencesEndPoint)
 
-	e.POST("/api/experience", controllers.CreateExperienceEndPoint)
+	e.POST("/experience", controllers.CreateExperienceEndPoint)
 
-	e.PUT("/api/experience/:id", controllers.UpdateExperienceEndPoint)
+	e.PUT("/experience/:id", controllers.UpdateExperienceEndPoint)
 
-	e.GET("/api/experience/:id", controllers.FindExperienceByIDEndPoint)
+	e.GET("/experience/:id", controllers.FindExperienceByIDEndPoint)
 
-	e.DELETE("/api/experience/:id", controllers.DeleteExperienceEndPoint)
+	e.DELETE("/experience/:id", controllers.DeleteExperienceEndPoint)
 }

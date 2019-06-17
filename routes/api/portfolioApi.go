@@ -7,14 +7,14 @@ import (
 )
 
 /*HandlePortfolioAPI bind user api router to @e app  */
-func HandlePortfolioAPI(e *echo.Echo) {
-	e.GET("/api/work", controllers.AllWorksEndPoint)
+func HandlePortfolioAPI(e *echo.Group) {
+	e.GET("/work", controllers.AllWorksEndPoint)
 
-	e.POST("/api/work", controllers.CreateWorkEndPoint)
+	e.POST("/work", controllers.CreateWorkEndPoint)
 
-	e.PUT("/api/work/:id", controllers.UpdateWorkEndPoint)
+	e.PUT("/work/:id", controllers.UpdateWorkEndPoint)
 
-	e.GET("/api/work/:id", controllers.FindWorkByIDEndPoint)
+	e.GET("/work/:id", controllers.FindWorkByIDEndPoint)
 
-	e.DELETE("/api/work/:id", controllers.DeleteWorkEndPoint)
+	e.DELETE("/work/:id", controllers.DeleteWorkEndPoint)
 }
