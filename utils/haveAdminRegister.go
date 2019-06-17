@@ -9,7 +9,7 @@ import (
 )
 
 /*
-Check is an admin is register to db or create it
+HaveAdminRegister Check is an admin is register to db or create it
 */
 func HaveAdminRegister(dba daos.DbAccess) {
 	_, err := dba.FindAdminByMail(os.Getenv("ADMIN_MAIL"))
