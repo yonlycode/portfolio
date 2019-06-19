@@ -1,37 +1,139 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { 
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem 
+} from 'reactstrap';
 import LogoutButton from '../../Buttons/Logout-Button/LogoutButton';
 
-export default (props) => {
-  return (
-    <header className="header_area">
-        <div className="main_menu">
-            <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container box_1620">
-                    {/*<!-- Brand and toggle get grouped for better mobile display --> */}
-                    <Link className="navbar-brand logo_h" to="/"><img className="logo" src="/public/img/logo.png" alt=""/></Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                    </button>
-                    {/*Collect the nav links, forms, and other content for toggling*/}
-                    <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul id="margin-bot-60" className="nav navbar-nav menu_nav ml-auto">
-                            <li className="nav-item"><Link className="nav-link" to="">Acceuil</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="about-me">À propos</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="works">Portfolio</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="services">Services</Link></li> 
-                            <li className="nav-item"><Link className="nav-link" to="blog">Blog</Link></li>  
-                            <li className="nav-item"><Link className="nav-link" to="contact">Contact</Link></li>
-                            {
-                                window.localStorage.getItem('token')!==null?<LogoutButton/>:""
-                            }
-                        </ul>
-                    </div>
+export default class Header extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            isOpen: false
+        }
+    }
+    toggle=()=>{
+        this.setState(prevstate=>{
+            return{
+                isOpen:!prevstate.isOpen
+            }
+        })
+    }
+    render(){
+        const adminRoutes =(
+            <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                Administration
+                </DropdownToggle>
+                <DropdownMenu right>
+                    <Link to="/admin" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Dashboard
+                        </DropdownItem>
+                    </Link>
+                    <Link to="/admin-work" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Porfolio
+                        </DropdownItem>
+                    </Link>
+                    <Link to="/admin-service" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Services
+                        </DropdownItem>
+                    </Link>
+                   
+                    <Link to="/admin-skill" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Skills
+                        </DropdownItem>
+                    </Link>
+                    <Link to="/admin-blog" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Blog
+                        </DropdownItem>
+                    </Link>
+                    
+                    <DropdownItem divider />
+                    <Link to="/admin-upload" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Ressources
+                        </DropdownItem>
+                    </Link>
+                    <Link to="/admin-setting" style={{ textDecoration: 'none' }}>
+                        <DropdownItem>
+                            Compte
+                        </DropdownItem>
+                    </Link>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                        <LogoutButton/>
+                    </DropdownItem>
+                </DropdownMenu>
+            </UncontrolledDropdown>
+        )
+        return (
+            <header className="header_area" style={{fontSize:"125%"}}>
+                <div  className="main_menu">
+                    <Navbar color="dark" dark expand="md">
+                        <NavbarToggler onClick={this.toggle}/>
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <Link to="/" style={{ textDecoration: 'none' }}>
+                                        <NavLink>Acceuil</NavLink>
+                                    </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/about-me" style={{ textDecoration: 'none' }}>
+                                        <NavLink>À propos</NavLink>
+                                    </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/work" style={{ textDecoration: 'none' }}>
+                                        <NavLink>
+                                        Portfolio
+                                        </NavLink>
+                                    </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/blog" style={{ textDecoration: 'none' }}>
+                                        <NavLink>
+                                            Blog
+                                        </NavLink>
+                                    </Link>              
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/service" style={{ textDecoration: 'none' }}>
+                                        <NavLink>
+                                            Services
+                                        </NavLink>
+                                    </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link to="/contact" style={{ textDecoration: 'none' }}>
+                                        <NavLink>
+                                            Contact
+                                        </NavLink>
+                                    </Link>
+                                </NavItem>
+                                {
+                                    window.localStorage.getItem("token")!==null?adminRoutes:""
+                                }
+                            </Nav>
+                        </Collapse>
+                    </Navbar>
                 </div>
-            </nav>
-        </div>
-    </header>
-  )
+            </header>
+        )
+    }
 }

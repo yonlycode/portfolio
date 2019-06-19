@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AppRouter from './AppRouter';
 import "./assets/css/app.css";
 import "./assets/css/responsive.css"
-import ActivityIndicator from './components/stateless/Activity-Indicator/ActivityIndicator';
+import ActivityIndicator from './components/layout/Activity-Indicator/ActivityIndicator';
 import ErrorBoundary from './components/layout/Error-Boundary/ErrorBoundary';
 
 
