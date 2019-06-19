@@ -17,7 +17,7 @@ func HaveAdminRegister(dba daos.DbAccess) {
 		admin := models.AdminModel{
 			ID:       bson.NewObjectId(),
 			Mail:     os.Getenv("ADMIN_MAIL"),
-			Password: os.Getenv("ADMIN_PASS"),
+			Password: GenerateHash(os.Getenv("ADMIN_PASS")),
 		}
 		err := dba.InsertAdmin(admin)
 		if err != nil {

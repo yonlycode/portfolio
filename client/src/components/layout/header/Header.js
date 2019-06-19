@@ -86,9 +86,9 @@ export default class Header extends React.Component{
             </UncontrolledDropdown>
         )
         return (
-            <header className="header_area" style={{fontSize:"125%"}}>
+            <header className="header_area" style={{fontSize:"135%"}}>
                 <div  className="main_menu">
-                    <Navbar color="dark" dark expand="md">
+                    <Navbar color="dark" dark expand="lg">
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>

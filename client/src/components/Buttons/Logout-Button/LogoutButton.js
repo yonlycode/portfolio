@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 
 const handleLogout = ()=>{
     window.localStorage.removeItem('token')
+    window.localStorage.removeItem('mail')
     window.location.reload();
 }
 

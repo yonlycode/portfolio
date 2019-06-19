@@ -18,9 +18,6 @@ var (
 
 /*SetRoutes bind routes to the application */
 func SetRoutes() {
-	A.Static("/", "./client/build")
-
-	A.Static("/upload", "./uploads")
 	/* create api router group and securise it with jwt */
 	apiG = A.Group("/api")
 	apiG.Use(middleware.JWTWithConfig(middleware.JWTConfig{
@@ -36,6 +33,10 @@ func SetRoutes() {
 	api.HandleSocialAPI(apiG)
 	api.HandleSubsAPI(apiG)
 	actions.HandleConnection(A)
+
+	A.Static("/", "./client/build")
+
+	A.Static("/upload", "./uploads")
 
 	/*Set redirection to application on 404  */
 	A.HTTPErrorHandler = func(err error, c echo.Context) {

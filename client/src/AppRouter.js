@@ -16,6 +16,7 @@ const OnBuildPage = lazy(()=>import('./pages/user/OnBuildPage'));
 const AdminLoginPage = lazy(()=>import('./pages/admin/Admin-Loggin.js/AdminLoginPage'));
 const WorkPage = lazy(()=>import('./pages/user/WorkPage'));
 const BlogPage = lazy(()=>import('./pages/user/BlogPage'));
+const NotFoundPage = lazy(()=>import('./pages/user/Not-Found-Page/NotFoundPage'))
 
 /* Admin */
 const AdminDashboard = lazy(()=>import('./pages/admin/Admin-Dashboard/AdminDashboard'))
@@ -35,13 +36,14 @@ export default class AppRouter extends Component {
               <Switch>
 
                 {/* Public Routes */}
-                <Route path="/" exact component={HomePage} />
-                <Route path="/contact" component={ContactPage} />
-                <Route path="/service" component={ServicePage} />
-                <Route path="/about-me" component={AboutMePage} />
-                <Route path="/work" component={OnBuildPage} />
-                <Route path="/blog" component={OnBuildPage} />
-                <Route path="/login" component={AdminLoginPage} />
+                <Route path="/" exact component={()=><HomePage/>} />
+                <Route path="/contact" component={()=><ContactPage/>} />
+                <Route path="/service" component={()=><ServicePage/>} />
+                <Route path="/about-me" component={()=><AboutMePage/>} />
+                <Route path="/work" component={()=><OnBuildPage/>} />
+                <Route path="/blog" component={()=><OnBuildPage/>} />
+                <Route path="/login" component={()=><AdminLoginPage/>} />
+                <Route path="/not-found" component={()=><NotFoundPage/>} />
 
                 
                 {/* Admin Private Routes */}
@@ -53,10 +55,9 @@ export default class AppRouter extends Component {
                 <PrivateRoute path="/admin-skill" component={()=><AdminSkill/>} />
                 <PrivateRoute path="/admin-upload" component={()=><AdminUpload/>}/>
 
-                {/*  */}
+                {/* Redirection for 404 not found page */}
+                <Redirect to="not-found"/> 
 
-
-                {/*  */}
               </Switch>
             <Footer/> 
           </Analytics>          

@@ -8,7 +8,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <HomeBanner/>
+        <HomeBanner title="Bienvenue"/>
         <Welcome/>
         <Experience/>
         <HomeFeature/>

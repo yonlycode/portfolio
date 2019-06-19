@@ -10,7 +10,8 @@ export default class AdminLoginPage extends Component {
     this.state={
         mail:"",
         password:"",
-        redirectToReferrer: false
+        redirectToReferrer: false,
+        errorMsg:null
     }
 }
   /* get jwt  */
@@ -20,23 +21,38 @@ export default class AdminLoginPage extends Component {
         password:this.state.password
     })
     .catch((e)=>{
-        console.log(e)
+        this.setState({
+          errorMsg:e
+        })
     })
     .then((r)=>{
-        window.localStorage.setItem('token' , r.data.token)
-        this.setState({ redirectToReferrer: true })
+        if(r.data===undefined){
+          this.setState({
+            errorMsg:"there is a problem here"
+          })
+        }else{
+          window.localStorage.setItem('token' , r.data.token)
+          window.localStorage.setItem('adminId',r.data.user.split('"')[1])
+          this.setState({ redirectToReferrer: true })
+        }
+       
     })
-}
+  }
+
+  cleanAlert=()=>{
+    this.setState({
+      errorMsg:null
+    })
+  }
   
 
   render() {
-    let { from } = this.props.location.state || { from: { pathname: "/" } };
-    let { redirectToReferrer } = this.state;
+    let { from } = { from: { pathname: "/admin" } };
+    let { redirectToReferrer,mail, password, errorMsg } = this.state;
 
     if (redirectToReferrer) return <Redirect to={from} />;
 
-    const { checkLogin } = this
-    const { mail, password } = this.state
+    const { checkLogin , cleanAlert } = this
 
     return (
       <div>

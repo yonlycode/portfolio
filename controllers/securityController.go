@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"portfolio/utils"
@@ -50,8 +51,10 @@ func AdminLoginActionEndPoint(c echo.Context) error {
 		if err != nil {
 			return err
 		}
+		fmt.Println("admin id " + admin.ID.String())
 		return c.JSON(http.StatusOK, map[string]string{
 			"token": t,
+			"user":  admin.ID.String(),
 		})
 	}
 
