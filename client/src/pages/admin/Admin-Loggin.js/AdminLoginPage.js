@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "../../../assets/css/adminLoginForm.css"
-import PageBanner from '../../../components/stateless/banners/PageBanner';
 import {Redirect} from 'react-router-dom'
 import Axios from 'axios';
+import TwoPageBanner from '../../../components/stateless/banners/TwoPageBanner/TwoPageBanner';
 
 export default class AdminLoginPage extends Component {
   constructor(props){
@@ -40,9 +40,8 @@ export default class AdminLoginPage extends Component {
 
     return (
       <div>
-        <PageBanner 
-          CurrentPage="Connection"
-          CurrentUri="admin"
+        <TwoPageBanner 
+          currentUri="login"
         />
           <div className="wrapper">
             <div className="login">

@@ -19,6 +19,8 @@ var (
 /*SetRoutes bind routes to the application */
 func SetRoutes() {
 	A.Static("/", "./client/build")
+
+	A.Static("/upload", "./uploads")
 	/* create api router group and securise it with jwt */
 	apiG = A.Group("/api")
 	apiG.Use(middleware.JWTWithConfig(middleware.JWTConfig{

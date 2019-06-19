@@ -36,6 +36,10 @@ export default class Header extends React.Component{
                 Administration
                 </DropdownToggle>
                 <DropdownMenu right>
+                    {/* <DropdownItem>
+                        Welcome Admin
+                    </DropdownItem>
+                    <DropdownItem divider /> */}
                     <Link to="/admin" style={{ textDecoration: 'none' }}>
                         <DropdownItem>
                             Dashboard

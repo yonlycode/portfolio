@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import "../../assets/css/machine.css"
-import PageBanner from '../../components/stateless/banners/PageBanner';
+import TwoPageBanner from '../../components/stateless/banners/TwoPageBanner/TwoPageBanner';
 export default class OnBuildPage extends Component {
   render() {
     return (
       <div>
-        <PageBanner 
-        CurrentPage="Désolé mais on travail très dure"
-        CurrentUri=""
+        <TwoPageBanner 
+        currentUri="on-build"
         />
         <div className="machine-wrap">
             <div className="machine">

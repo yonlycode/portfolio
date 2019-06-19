@@ -2,16 +2,13 @@ import React, { Component } from 'react'
 import Welcome from '../../components/Welcome/Welcome';
 import Experience from '../../components/Experiences/Experience';
 import HomeFeature from '../../components/Home-Feature/HomeFeature';
-import PageBanner from '../../components/stateless/banners/PageBanner';
+import HomeBanner from '../../components/stateless/banners/Home-Banner/HomeBanner'
 
 export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <PageBanner 
-          CurrentPage="Home"
-          CurrentUri="/"
-        />
+        <HomeBanner/>
         <Welcome/>
         <Experience/>
         <HomeFeature/>

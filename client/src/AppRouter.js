@@ -30,7 +30,7 @@ export default class AppRouter extends Component {
   render() {
     return (
         <Router>
-          <Analytics id="UA-135789824-1" debug>   
+          <Analytics id="UA-135789824-1">   
             <Header/>
               <Switch>
 
@@ -46,16 +46,12 @@ export default class AppRouter extends Component {
                 
                 {/* Admin Private Routes */}
                 <PrivateRoute path="/admin" component={()=><AdminDashboard/>} />
-
                 <PrivateRoute path="/admin-setting" component={()=><AdminAccountSetting/>} />
-
                 <PrivateRoute path="/admin-blog" component={()=><AdminBlog/>} />
-
                 <PrivateRoute path="/admin-works" component={()=><AdminPortfolio/>} />
-
                 <PrivateRoute path="/admin-service" component={()=><AdminService/>} />
                 <PrivateRoute path="/admin-skill" component={()=><AdminSkill/>} />
-                <PrivateRoute path="/admin-upload" component={()=><AdminUpload/>} />
+                <PrivateRoute path="/admin-upload" component={()=><AdminUpload/>}/>
 
                 {/*  */}
 

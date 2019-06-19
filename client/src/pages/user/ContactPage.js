@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import PageBanner from '../../components/stateless/banners/PageBanner';
+import TwoPageBanner from '../../components/stateless/banners/TwoPageBanner/TwoPageBanner';
 import ContactForm from '../../components/forms/Contact-Form/ContactForm';
 
 export default class ContactPage extends Component {
   render() {
     return (
       <div>
-        <PageBanner 
-          CurrentPage="Contact"
-          CurrentUri="contact"
+        <TwoPageBanner 
+          currentUri="contact"
         />
         <section className="contact_area p_120">
           <div className="container">
