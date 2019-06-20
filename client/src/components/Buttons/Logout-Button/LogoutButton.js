@@ -6,7 +6,7 @@ const handleLogout = ()=>{
     window.localStorage.removeItem('mail')
     window.location.reload();
 }
-
+export {handleLogout}
 export default function LogoutButton() {
     return (
         <Button onClick={handleLogout}>

@@ -63,6 +63,11 @@ func UpdateAdminEndPoint(c echo.Context) error {
 	if err := c.Bind(&m); err != nil {
 		return c.String(422, "error : "+err.Error())
 	}
+
+	//check if password is already hashed or not
+	if len(m.Password) < 25 {
+		m.Password = utils.GenerateHash(m.Password)
+	}
 	//insert to model to database
 	if err := Dba.UpdateAdmin(m, c.Param("id")); err != nil {
 		return c.String(500, "error : "+err.Error())

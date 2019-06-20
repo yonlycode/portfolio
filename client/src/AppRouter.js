@@ -1,5 +1,5 @@
 import React, { Component, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Analytics from 'react-router-ga';
 
 /* Layout generic import */
@@ -40,8 +40,8 @@ export default class AppRouter extends Component {
                 <Route path="/contact" component={()=><ContactPage/>} />
                 <Route path="/service" component={()=><ServicePage/>} />
                 <Route path="/about-me" component={()=><AboutMePage/>} />
-                <Route path="/work" component={()=><OnBuildPage/>} />
-                <Route path="/blog" component={()=><OnBuildPage/>} />
+                <Route path="/work" component={()=><WorkPage/>} />
+                <Route path="/blog" component={()=><BlogPage/>} />
                 <Route path="/login" component={()=><AdminLoginPage/>} />
                 <Route path="/not-found" component={()=><NotFoundPage/>} />
 
@@ -50,7 +50,7 @@ export default class AppRouter extends Component {
                 <PrivateRoute path="/admin" component={()=><AdminDashboard/>} />
                 <PrivateRoute path="/admin-setting" component={()=><AdminAccountSetting/>} />
                 <PrivateRoute path="/admin-blog" component={()=><AdminBlog/>} />
-                <PrivateRoute path="/admin-works" component={()=><AdminPortfolio/>} />
+                <PrivateRoute path="/admin-work" component={()=><AdminPortfolio/>} />
                 <PrivateRoute path="/admin-service" component={()=><AdminService/>} />
                 <PrivateRoute path="/admin-skill" component={()=><AdminSkill/>} />
                 <PrivateRoute path="/admin-upload" component={()=><AdminUpload/>}/>

@@ -65,6 +65,7 @@ export default class AdminLoginPage extends Component {
                 <input 
                     type="mail" 
                     placeholder="Mail" 
+                    name="Mail"
                     value={mail}
                     onChange={(e)=>this.setState({mail:e.target.value})}
                     autofocus
@@ -74,13 +75,13 @@ export default class AdminLoginPage extends Component {
                 <input 
                     type="password" 
                     placeholder="Password"
+                    name="Password" 
                     value={password}
                     onChange={(e)=>this.setState({password:e.target.value})}
                 />
                 <i className="fa fa-key"></i>
 
 
-                <a href="#">Forgot your password?</a>
                 <button onClick={ checkLogin }>
                     <i className="spinner"></i>
                     <span className="state">Connection</span>
