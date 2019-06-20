@@ -39,7 +39,7 @@ func SetRoutes() {
 	A.Static("/upload", "./uploads")
 
 	/*Set redirection to application on 404  */
-	A.HTTPErrorHandler = func(err error, c echo.Context) {
+	/* A.HTTPErrorHandler = func(err error, c echo.Context) {
 		if err.Error() == "code=400, message=missing or malformed jwt" {
 			// render 404 page
 			c.String(400, "bad auth or malformed jwt")
@@ -48,5 +48,5 @@ func SetRoutes() {
 			c.File("./client/build/index.html")
 		}
 
-	}
+	} */
 }
