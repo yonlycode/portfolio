@@ -6,8 +6,8 @@ export default function NotFoundPage() {
         <div>
             <TwoPageBanner 
                 currentUri="not-found"
+                title="Sorry the page you want to see don't exist"
             />
-            <h1>Sorry the page you want to see don't exist</h1>
         </div>
     )
 }

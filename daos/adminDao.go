@@ -13,7 +13,7 @@ const (
 //FindAllAdmins return all admin accounts
 func (m *DbAccess) FindAllAdmins() ([]models.AdminModel, error) {
 	var admins []models.AdminModel
-	err := db.C(adminCollection).Find(bson.M{}).Sort("-created").All(&admins)
+	err := db.C(adminCollection).Find(bson.M{}).Sort("created").All(&admins)
 	return admins, err
 }
 

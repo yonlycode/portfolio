@@ -9,11 +9,11 @@ import (
 //PortfolioProjectModel portfolio project data model
 type PortfolioProjectModel struct {
 	ID          bson.ObjectId `bson:"_id" json:"_id" binding:"required"`
-	Name        string        `bson:"first_name" json:"first_name" binding:"required"`
-	Description string        `bson:"last_name" json:"last_name" binding:"required"`
-	Tag         []string      `bson:"job" json:"job" binding:"required"`
-	Text        string        `bson:"birthdate" json:"birthdate" binding:"required"`
-	Images      []string      `bson:"mail" json:"mail" binding:"required"`
-	Creator     string        `bson:"localisation" json:"localisation" binding:"required"`
+	Name        string        `bson:"name" json:"name" binding:"required"`
+	Description string        `bson:"description" json:"description" binding:"required"`
+	Tags        []string      `bson:"tags" json:"tags" binding:"required"`
+	Text        string        `bson:"text" json:"text" binding:"required"`
+	Images      []string      `bson:"images" json:"images" binding:"required"`
+	Creator     string        `bson:"creator" json:"creator" binding:"required"`
 	Created     time.Time     `bson:"created" json:"created" binding:"required"`
 }

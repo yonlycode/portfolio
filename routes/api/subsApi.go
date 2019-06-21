@@ -7,7 +7,7 @@ import (
 )
 
 /*HandleSubsAPI bind subs api router to @e app  */
-func HandleSubsAPI(e *echo.Group) {
+func HandleSocialAPI(e *echo.Group) {
 
 	/* Api routes */
 	e.GET("/social-network", controllers.AllSocialNetworksEndPoint)

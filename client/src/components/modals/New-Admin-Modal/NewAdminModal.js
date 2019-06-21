@@ -50,7 +50,7 @@ export default class NewAdminModal extends Component {
                                 this.setState({
                                     mail:e.target.value
                                 })
-                            }}  id="newadminmail" placeholder="default" />
+                            }}  id="newadminmail" placeholder="************" />
                         </Col>
                     </FormGroup>
                     <FormGroup row>

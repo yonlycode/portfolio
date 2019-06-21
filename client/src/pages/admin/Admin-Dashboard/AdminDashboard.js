@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
-
+import TwoPageBanner from '../../../components/stateless/banners/TwoPageBanner/TwoPageBanner'
 export default class AdminDashboard extends Component {
     render() {
         return (
             <div>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
-                <h1>Admin dashboard here</h1>
+                <TwoPageBanner 
+                    currentUri="admin"
+                    title="dashboard"
+                />
             </div>
         )
     }
