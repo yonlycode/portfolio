@@ -32,6 +32,11 @@ func SetRoutes() {
 	api.HandleEducationAPI(apiG)
 	api.HandleSocialAPI(apiG)
 	api.HandleSubsAPI(apiG)
+
+	api.HandleSkillAPI(apiG)
+	api.HandleServiceAPI(apiG)
+	api.HandleImageAPI(apiG)
+
 	actions.HandleConnection(A)
 
 	A.Static("/", "./client/build")

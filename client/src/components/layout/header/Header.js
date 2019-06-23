@@ -35,7 +35,7 @@ export default class Header extends React.Component{
                 <DropdownToggle nav caret>
                 Administration
                 </DropdownToggle>
-                <DropdownMenu right>
+                <DropdownMenu  right>
                     {/* <DropdownItem>
                         Welcome Admin
                     </DropdownItem>

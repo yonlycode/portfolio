@@ -12,6 +12,7 @@
     "react-router-dom": "^4.3.1",
     "react-router-ga": "^1.2.0",
     "react-scripts": "^3.0.1",
+    "react-test-renderer": "^16.8.6",
     "react-typed": "^1.1.0",
     "reactstrap": "^8.0.0"
   },
@@ -32,6 +33,8 @@
   ],
   "proxy": "http://localhost:4000",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0"
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@txhawks/matchmedia-polyfill": "^0.3.0",
+    "uglify-js-brunch": "^2.10.0"
   }
 }

@@ -60,7 +60,8 @@ export default class AppRouter extends Component {
 
               </Switch>
             <Footer/> 
-          </Analytics>          
+          </Analytics>  
+          
       </Router>
     )
   }

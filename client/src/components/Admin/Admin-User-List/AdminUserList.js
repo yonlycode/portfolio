@@ -20,7 +20,6 @@ export default class AdminUserList extends Component {
             alert(e)
         })
         .then(res=>{
-            console.log(res)
             this.setState({
                 admins:res.data
             })
@@ -31,7 +30,7 @@ export default class AdminUserList extends Component {
             return <AdminUserItem key={k} data={val} />
         })
         return (
-            <Table responsive>
+            <Table hover bordered dark responsive>
                 <thead>
                     <tr>
                         <th>#</th>

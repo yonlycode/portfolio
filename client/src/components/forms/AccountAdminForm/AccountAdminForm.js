@@ -65,7 +65,6 @@ export default class AccountAdminForm extends Component {
             })
             .then((res)=>{
                 //refresh infos
-                this.props.onSuccess()
             })
         }else{
             //if form isn't valid
@@ -162,7 +161,7 @@ export default class AccountAdminForm extends Component {
                     </FormGroup>
                     <FormGroup check row>
                     <Col sm={{ size: 2, offset: 5 }}>
-                        <Button onClick={this.updateAdmin}>Modifier</Button>
+                        <Button color="success" onClick={this.updateAdmin}>Modifier</Button>
                     </Col>
                     </FormGroup>
             </div>)
