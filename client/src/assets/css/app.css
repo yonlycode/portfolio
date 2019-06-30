@@ -1740,36 +1740,6 @@ h6 {
     color: #777777;
     margin-bottom: 0px; }
 
-.tools_expert {
-  padding: 20px 0px 0px 0px; }
-  .tools_expert .skill_main .skill_item {
-    margin-bottom: 18px; }
-    .tools_expert .skill_main .skill_item:last-child {
-      margin-bottom: 0px; }
-    .tools_expert .skill_main .skill_item h4 {
-      text-align: none;
-      font-size: 14px;
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-      color: #222222;
-      margin-bottom: 15px; }
-    .tools_expert .skill_main .skill_item .progress_br {
-      border: 1px solid #eeeeee;
-      padding: 5px;
-      border-radius: 10px; }
-    .tools_expert .skill_main .skill_item .progress {
-      height: 10px;
-      border-radius: 10px;
-      background: #e8e8e8; }
-      .tools_expert .skill_main .skill_item .progress .progress-bar {
-        width: 0%;
-        transition: width .6s ease;
-        height: 10px;
-        border-radius: 5px;
-        vertical-align: middle;
-        align-self: center;
-        background-image: linear-gradient(to left bottom, #845ec2, #4274cd, #0081c5, #008ab2, #008e9b);}
-
 /* End Welcome Area css
 ============================================================================================ */
 /* My Tabs Area css
@@ -2093,43 +2063,3 @@ h6 {
 ============================================================================================ */
 /*---------------------------------------------------- */
 /*=================== Tag List ======================*/
-
-.tagcloud ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	overflow: hidden;
-}
-.tagcloud ul li {
-	float: left;
-	width: 150px;
-	margin: 0 10px 10px 0;
-	padding: 0;
-}
-.tagcloud ul li a {
-	display: block;
-	width: 100%;
-	height: 32px;
-	line-height: 32px;
-	padding: 0 1em;
-	background-color: #fff;
-	border: 1px solid #aaa;
-	border-radius: 3px;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	color: #333;
-	font-size: 13px;
-	text-decoration: none;
-	-webkit-transition: .2s;
-	transition: .2s;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-.tagcloud ul li a:hover {
-  font-weight: bolder;
-	background-image: linear-gradient(to left bottom, #845ec2, #4274cd, #0081c5, #008ab2, #008e9b);
-	border: 1px solid #3498db;
-	color: #fff;
-}
-

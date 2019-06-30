@@ -13,5 +13,6 @@ type ServiceModel struct {
 	Description string        `bson:"description" json:"description" binding:"required"`
 	Icon        string        `bson:"icon" json:"icon" binding:"required"`
 	Text        string        `bson:"text" json:"text" binding:"required"`
+	Hot         bool          `bson:"hot" json:"hot" binding:"required"`
 	Created     time.Time     `bson:"created" json:"created" binding:"required"`
 }

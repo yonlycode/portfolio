@@ -96,7 +96,7 @@ export default class AdminSkill extends Component {
                         </Col>
                     </Row>
                 </div>
-                {selectedSkill!==null?<ComponentModal onClose={this.CleanSelect} component={<UpdateForm onClose={this.CleanSelect} data={selectedSkill} onUpdate={this.getSkillList}/>}/>:""}
+                {selectedSkill!==null?<ComponentModal onClose={this.CleanSelect} title={`modification du skill ${selectedSkill.name}`} component={<UpdateForm onClose={this.CleanSelect} data={selectedSkill}  onUpdate={this.getSkillList}/>}/>:""}
             </div>
         )}
         

@@ -9,6 +9,7 @@ export default class UpdateSkillForm extends Component {
             id:"",
             name:"",
             info:"",
+            created:"",
             firepost:true,
 
             errorMsg:null,
@@ -22,6 +23,7 @@ export default class UpdateSkillForm extends Component {
             name:this.props.data.name,
             info:this.props.data.info,
             firepost:this.props.data.firepost,
+            created:this.props.data.created
         })
     }
 
@@ -33,6 +35,7 @@ export default class UpdateSkillForm extends Component {
             name: this.state.name,
             info: this.state.info,
             firepost: this.state.firepost,
+            created:this.state.created
         }
 
         //request here
@@ -69,7 +72,6 @@ export default class UpdateSkillForm extends Component {
     }
 
     render() {
-        console.log(this.state)
         const {name, info,firepost} = this.state
         return (
             <div className="container">
@@ -104,8 +106,8 @@ export default class UpdateSkillForm extends Component {
                     </Col>
                 </Row>
                 <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100px"}}>
-                    <Button onClick={this.handleCreateTag} color="success">
-                        Créer
+                    <Button onClick={this.handleCreateTag} color="warning">
+                        Modifier
                     </Button>
                 </div>
                 

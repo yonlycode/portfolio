@@ -9,7 +9,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-// AllSkillsEndPoint return all images
+// AllSkillsEndPoint return all skills
 func AllSkillsEndPoint(c echo.Context) error {
 	skills, err := Dba.FindAllSkills()
 	if err != nil {
@@ -18,7 +18,16 @@ func AllSkillsEndPoint(c echo.Context) error {
 	return c.JSON(200, skills)
 }
 
-// FindSkillByIDEndPoint return a blog post
+// LastSkillsEndPoint return 15 last skills
+func LastSkillsEndPoint(c echo.Context) error {
+	skills, err := Dba.FindLastSkills()
+	if err != nil {
+		return c.String(500, "error : "+err.Error())
+	}
+	return c.JSON(200, skills)
+}
+
+// FindSkillByIDEndPoint return a skill by id
 func FindSkillByIDEndPoint(c echo.Context) error {
 	skill, err := Dba.FindSkillByID(c.Param("id"))
 	if err != nil {
@@ -28,7 +37,7 @@ func FindSkillByIDEndPoint(c echo.Context) error {
 
 }
 
-// CreateSkillEndPoint create new blog post
+// CreateSkillEndPoint create new skill
 func CreateSkillEndPoint(c echo.Context) error {
 	//set Model
 	var m models.SkillModel
@@ -51,7 +60,7 @@ func CreateSkillEndPoint(c echo.Context) error {
 	return c.String(200, "skill Created successfully")
 }
 
-// UpdateImageEndPoint update blog post data
+// UpdateSkillEndPoint update skill
 func UpdateSkillEndPoint(c echo.Context) error {
 	//set Model
 	var m models.SkillModel
@@ -70,7 +79,7 @@ func UpdateSkillEndPoint(c echo.Context) error {
 	return c.String(200, "Skill Updated successfully")
 }
 
-// DeleteSkillEndPoint delete post by id
+// DeleteSkillEndPoint delete skill by id
 func DeleteSkillEndPoint(c echo.Context) error {
 	err := Dba.DeleteSkill(c.Param("id"))
 	if err != nil {

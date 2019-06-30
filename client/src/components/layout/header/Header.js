@@ -4,7 +4,6 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
@@ -13,7 +12,9 @@ import {
     DropdownMenu,
     DropdownItem 
 } from 'reactstrap';
+
 import LogoutButton from '../../Buttons/Logout-Button/LogoutButton';
+
 
 export default class Header extends React.Component{
     constructor(props){

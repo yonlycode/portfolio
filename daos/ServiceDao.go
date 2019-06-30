@@ -17,6 +17,13 @@ func (m *DbAccess) FindAllServices() ([]models.ServiceModel, error) {
 	return services, err
 }
 
+//FindLastServices return 3 last hot services
+func (m *DbAccess) FindLastServices() ([]models.ServiceModel, error) {
+	var services []models.ServiceModel
+	err := db.C(serviceCollection).Find(bson.M{"hot": true}).Sort("-created").Limit(3).All(&services)
+	return services, err
+}
+
 //FindServiceByID return name
 func (m *DbAccess) FindServiceByID(id string) (models.ServiceModel, error) {
 	var service models.ServiceModel

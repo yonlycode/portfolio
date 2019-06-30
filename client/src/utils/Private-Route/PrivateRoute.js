@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route , Redirect} from 'react-router-dom'
+
 /* protected route */
 export default function PrivateRoute({ component: Component, ...rest }) {
   return (

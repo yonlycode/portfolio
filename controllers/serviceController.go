@@ -18,6 +18,15 @@ func AllServicesEndPoint(c echo.Context) error {
 	return c.JSON(200, services)
 }
 
+// LastServicesEndPoint return 3 last  hot services
+func LastServicesEndPoint(c echo.Context) error {
+	services, err := Dba.FindLastServices()
+	if err != nil {
+		return c.String(500, "error : "+err.Error())
+	}
+	return c.JSON(200, services)
+}
+
 // FindServiceByIDEndPoint return a blog post
 func FindServiceByIDEndPoint(c echo.Context) error {
 	post, err := Dba.FindServiceByID(c.Param("id"))
