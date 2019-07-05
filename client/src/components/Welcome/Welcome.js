@@ -42,6 +42,7 @@ export default class Welcome extends Component {
                             
                         </div>
                         <div className="col-lg-6">
+                            
                             <SkillTags data={this.state.data}/>
                         </div>
                     </div>

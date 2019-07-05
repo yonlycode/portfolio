@@ -1,30 +1,46 @@
 import React, { Component } from 'react'
 import { Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 import Axios from 'axios';
-
-export default class NewSkillForm extends Component {
+export default class UpdateServiceForm extends Component {
     constructor(props){
         super(props)
         this.state={
+            id:"",
             name:"",
             info:"",
+            created:"",
             firepost:true,
+
             errorMsg:null,
 
         }
     }
+
+    componentDidMount(){
+        this.setState({
+            id:this.props.data._id,
+            name:this.props.data.name,
+            info:this.props.data.info,
+            firepost:this.props.data.firepost,
+            created:this.props.data.created
+        })
+    }
+
+
     handleCreateTag=()=>{
         //create the new user data
         let data = {
+            _id:this.state.id,
             name: this.state.name,
             info: this.state.info,
             firepost: this.state.firepost,
+            created:this.state.created
         }
 
         //request here
         Axios({
-            method: 'post',
-            url: '/api/skill',
+            method: 'put',
+            url: '/api/skill/'+this.state.id,
             headers:{'Authorization':"Bearer "+window.localStorage.getItem("token") },
             data: data
         })
@@ -34,8 +50,8 @@ export default class NewSkillForm extends Component {
             })
         })
         .then((res)=>{
-            this.cleanForm()
-            this.props.onCreate()
+            this.props.onUpdate()
+            this.props.onClose()
         })
         
     }
@@ -55,15 +71,10 @@ export default class NewSkillForm extends Component {
     }
 
     render() {
-        console.log(this.state)
         const {name, info,firepost} = this.state
         return (
             <div className="container">
-                <br/><br/><br/><br/>
-                <h3 style={{textAlign:"center"}}>
-                    <strong> Nouveau Tag</strong>
-                </h3>
-                
+                <br/>                
                 <br/>
                 <Row form>
                     <Col md={12}>
@@ -94,8 +105,8 @@ export default class NewSkillForm extends Component {
                     </Col>
                 </Row>
                 <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100px"}}>
-                    <Button onClick={this.handleCreateTag} color="success">
-                        Créer
+                    <Button onClick={this.handleCreateTag} color="warning">
+                        Modifier
                     </Button>
                 </div>
                 

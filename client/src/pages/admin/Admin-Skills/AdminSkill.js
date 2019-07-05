@@ -93,7 +93,7 @@ export default class AdminSkill extends Component {
                             })} onSearch={this.onSearch}/>
                             <br/>
                             {skills!==null?<AdminSkillList onUpdate={this.onSelectSkill} onDelete={this.getSkillList} data={skills} />:<NoRessourceFounded/>}
-                        </Col>
+                            </Col>
                     </Row>
                 </div>
                 {selectedSkill!==null?<ComponentModal onClose={this.CleanSelect} title={`modification du skill ${selectedSkill.name}`} component={<UpdateForm onClose={this.CleanSelect} data={selectedSkill}  onUpdate={this.getSkillList}/>}/>:""}

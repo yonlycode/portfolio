@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsletterForm from '../../forms/Newsletter-Form/NewsletterForm';
+import './style.css'
 
 
 export default class Footer extends Component {

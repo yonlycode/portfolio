@@ -1,4 +1,39 @@
 import React from 'react'
+import ServiceList from '../Services-List/ServiceList';
+
+const data = [
+    {
+        title:"test",
+        text:"test",
+        icons:"fas fa-hands-helping"
+    },
+    {
+        title:"deuxieme tes",
+        text:" second test",
+        icons:"fas fa-hands-helping"
+    },
+    {
+        title:"troisième test",
+        text:"troisième test",
+        icons:"fas fa-hands-helping"
+    },
+    {
+        title:"test",
+        text:"test",
+        icons:"fas fa-hands-helping"
+    },
+    {
+        title:"test",
+        text:"test",
+        icons:"fas fa-hands-helping"
+    },
+    {
+        title:"test",
+        text:"test",
+        icons:"fas fa-hands-helping"
+    },
+]
+
 
 export default () => {
   return (
@@ -11,29 +46,7 @@ export default () => {
                     Je vous accompagne dans tout vos projets digitaux.
                 </p>
             </div>
-            <div className="feature_inner row">
-                <div className="col-lg-4 col-md-6">
-                    <div className="feature_item">
-                        <i className="fas fa-hands-helping"></i>
-                        <h4>Conseil</h4>
-                        <p>Ecoute, analyse des besoins, recherche de solutions, Je suis à vos cotés pour bien gérer vos systèmes informatiques.</p>
-                    </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                    <div className="feature_item">
-                        <i className="fab fa-whmcs"></i>
-                        <h4>Création d'application</h4>
-                        <p>Je crée des applications spécifiques a vos besoins pour optimiser votre temps de travail et automatiser au maximum vos taches redondantes.</p>
-                    </div>
-                </div>
-                <div className="col-lg-4 col-md-6">
-                    <div className="feature_item">
-                        <i className="fas fa-chart-bar"></i>
-                        <h4>SEO & Growth Hacking</h4>
-                        <p>Je vous accompagne entièrement vous et votre entreprise dans la démarche d'augmenter sa croissance et sa visibilité sur internet.</p>
-                    </div>
-                </div>
-            </div>
+            <ServiceList data={data} />
         </div>
     </section>
   )
