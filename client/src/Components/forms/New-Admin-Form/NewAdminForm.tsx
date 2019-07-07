@@ -1,35 +1,21 @@
 import React, { useState } from 'react'
-import { Button, Col, FormGroup, Label, Input } from 'reactstrap';
-
-import Axios from 'axios';
+import { Button, Col, FormGroup, Label, Input, Spinner } from 'reactstrap';
 import { isValidMail } from '../../../utils/isValidMail';
-import GetToken from '../../../Auth/GetToken';
+import { useHttpPost } from '../../../Hooks/useHttp';
 
 
 const NewAdminForm = () :React.FunctionComponentElement<{}>=>{
-
-    const [isCreated, setIsCreated] = useState(false);
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMsg, setErrorMsg] = useState("");
+
+
+    const [ isSending, sendRequest, response, error] = useHttpPost('/api/admin', {mail : mail, password:password},[],true)
+
 
     const CreateNewAdmin = () =>{
         if(isValidMail(mail)){
-            let data = {
-                mail : mail,
-                password:password
-            }
-            Axios.post('/api/admin',data,{
-                headers:{'Authorization':"Bearer "+GetToken()}
-            })
-            .catch(e=>{
-                setErrorMsg(e)
-            })
-            .then(res=>{
-                window.location.reload()
-            })
-        }else{
-            setErrorMsg("entrez une adresse mail valide")
+           sendRequest();
+            window.location.reload();
         }
     }
     
@@ -46,7 +32,10 @@ const NewAdminForm = () :React.FunctionComponentElement<{}>=>{
                 <Input type="password" name="newuserpassword" value={password} onChange={e=>setPassword(e.target.value)} id="newuserpassword" placeholder="************" />
             </Col>
         </FormGroup>
-        <Button color="success" onClick={CreateNewAdmin}>Créer</Button>
+        <div className="center">
+            <Button color={isSending?"primary":"success"} onClick={CreateNewAdmin}>{isSending?<Spinner/>:"Créer"}</Button>
+        </div>
+        
     </>
 
     return content;

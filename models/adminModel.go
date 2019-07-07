@@ -16,6 +16,6 @@ type AdminModel struct {
 	Description  string        `bson:"description" json:"description" binding:"required"`
 	Birthdate    string        `bson:"birthdate" json:"birthdate" binding:"required"`
 	Mail         string        `bson:"mail" json:"mail" binding:"required"`
-	Localisation string        `bson:"localisation" json:"localisation" binding:"required"`
+	Localisation string        `bson:"localisation" json:"localisation"`
 	Created      time.Time     `bson:"created" json:"created" binding:"required"`
 }

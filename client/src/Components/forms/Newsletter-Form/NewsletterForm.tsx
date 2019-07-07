@@ -1,34 +1,34 @@
-import React, { useState, useEffect  } from 'react'
+import React, { useState  } from 'react'
 import axios from 'axios'
 import ErrorAlert from '../../stateless/alerts/ErrorAlert';
 import SuccessAlert from '../../stateless/alerts/SuccessAlert';
 import ConfirmationModal from '../../modals/Confirmation-Modal/ConfirmationModal';
 import { isValidMail } from '../../../utils/isValidMail';
+import { useHttpPost } from '../../../Hooks/useHttp';
+import { Spinner } from 'reactstrap';
 
-const Newsletter :React.FC = () =>{
+const Newsletter = ():React.FunctionComponentElement<{}>  =>{
 
     const [mail , setMail]= useState("")
     const [errorMsg, setErrorMsg] = useState("")
     const [successMsg , setSuccessMsg] = useState("")
     const [isValidationNeeded, setIsValidationNeeded] = useState(false)
 
+
+    const [ isSending, sendRequest, response, error] = useHttpPost('/subscribe-to-newsletter', {mail:mail},[mail],)
     /* post data to server*/
+
     const handleSubscrition=()=>{
-        /* post data */
-        axios.post('/subscribe-to-newsletter',{mail})
-        .then((r)=>{
-            /* set success message */
-            if(r.status){
+        try{
+            sendRequest()
+            .then(()=>{
                 setMail("");
-                setSuccessMsg(r.data)
-            }
-        })
-        .catch((err)=>{
-            setErrorMsg("erreur interne")
-        })
-        .then(()=>{
-            handleCloseModal()
-        })
+                setSuccessMsg(response.value);
+            })
+        }catch(e){
+            setErrorMsg(error);
+        }
+        handleCloseModal();
     }
 
 
@@ -36,7 +36,6 @@ const Newsletter :React.FC = () =>{
     const handleCloseModal=()=>{
         setIsValidationNeeded(false)
     }
-
 
     /* Check mail's validity then open confirmation modal */
     const handleCheckForm=()=>{
@@ -101,7 +100,7 @@ const Newsletter :React.FC = () =>{
                             type="email"> 
                         </input>
                         <button onClick={handleCheckForm} className="btn sub-btn">
-                            <i className="fas fa-envelope"></i>
+                            {isSending?<Spinner/>:<i className="fas fa-envelope"></i>}
                         </button>	
                     </div>				
                     <div className="mt-10 info"></div>

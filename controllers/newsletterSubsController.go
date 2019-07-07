@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"portfolio/models"
@@ -98,6 +99,8 @@ func HandleNewSubscriber(c echo.Context) error {
 	if err != nil {
 		//if mail is valid
 		if utils.IsMail(m.Mail) {
+			fmt.Println("good mail")
+
 			//generate id/date and hash password
 			m.ID = bson.NewObjectId()
 			m.Created = time.Now()
@@ -106,13 +109,16 @@ func HandleNewSubscriber(c echo.Context) error {
 			if err := Dba.InsertSub(m); err != nil {
 				return c.String(500, "error : "+err.Error())
 			}
-
 			return c.JSON(200, "added to newsletter list successfully")
 		}
 		//else
+		fmt.Println("bad mail")
+
 		return c.JSON(http.StatusBadRequest, "need a valid mail")
 
 	}
+	fmt.Println(" mail already exist")
+
 	return c.JSON(http.StatusBadRequest, "mail "+checkInDb.Mail+" already registered")
 
 }

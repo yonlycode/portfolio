@@ -1,24 +1,43 @@
 import React, { useState , useEffect } from 'react'
-import { Col, Button, FormGroup, Label, Input, FormText } from 'reactstrap';
-import Axios from 'axios';
+import { Col, Button, FormGroup, Label, Input, Spinner } from 'reactstrap';
 import { isValidMail } from '../../../utils/isValidMail';
-import GetToken from '../../../Auth/GetToken';
+import GetAdminId from '../../../Auth/GetAdminId';
+import { useHttpPut } from '../../../Hooks/useHttp';
 
 interface props{
-    data? :{
-        _id:"",
-        firstName: "",
-        lastName: "",
-        password: "",
-        job: "",
-        description: "",
-        birthdate: "",
-        mail: "",
-        localisation: "",
-        created:""
+    data :{
+        _id:string,
+        firstName:string,
+        lastName:string,
+        password:string,
+        job:string,
+        description:string,
+        birthdate:string,
+        mail:string,
+        localisation:string,
+        created:string
     },
 }
+
+interface payload {
+    _id:string,
+    firstName:string,
+    lastName:string,
+    password:string,
+    job:string,
+    description:string,
+    birthdate:string,
+    mail:string,
+    localisation:string,
+    created:string
+}
+
+
 const AccountAdminForm = ( props :props ) :React.FunctionComponentElement<props> =>{
+
+    /* 
+        hooks for form values
+    */
     const [ id, setId ] = useState("");
     const [ firstName , setFirstName] = useState("");
     const [ lastName, setLastName] = useState("");
@@ -27,66 +46,59 @@ const AccountAdminForm = ( props :props ) :React.FunctionComponentElement<props>
     const [ description, setDescription] = useState("");
     const [ birthdate, setBirthdate ] = useState("");
     const [ mail, setMail] = useState("");
-    const [ localisation, setLocalistion] = useState("");
+    const [ localisation, setLocalisation] = useState("");
     const [ passConfirm, setPassConfirm] = useState("");
-    const [ errorMsg, setErrorMsg] = useState("");
-    const [ created, setCreated] = useState("")
+    const [ created, setCreated] = useState("");
 
+
+    //onReceiveProps
     useEffect(()=>{
-        if(props.data){
-            const {_id , firstName, lastName, password, job, description, birthdate, mail, localisation, created} = props.data;
-
-            setId(_id);
-            setFirstName(firstName);
-            setLastName(lastName);
-            setPassword(password);
-            setPassConfirm(password);
-            setJob(job);
-            setDescription(description);
-            setBirthdate(birthdate);
-            setMail(mail);
-            setLocalistion(localisation);
-            setCreated(created)
-        }
-
+        setId(props.data._id)
+        setFirstName(props.data.firstName);
+        setLastName(props.data.lastName);
+        setPassword(props.data.password);
+        setPassConfirm(props.data.password);
+        setJob(props.data.job);
+        setDescription(props.data.description);
+        setBirthdate(props.data.birthdate);
+        setMail(props.data.mail);
+        setLocalisation(props.data.localisation);
+        setCreated(props.data.created);
     },[props])
+
+
+    //this function return an object with the payload for useHttpPut hook
+    const payload = () :payload=>{
+        return{
+            _id:id,
+            firstName: firstName,
+            lastName: lastName,
+            password: password,
+            job: job,
+            description: description,
+            birthdate: birthdate,
+            mail: mail,
+            localisation: localisation,
+            created :created
+        }
+    } 
+
+    const [ isSending, sendRequest, response, error] = useHttpPut("/api/admin/"+GetAdminId(),payload(),[payload()],true)
     const updateAdmin=()=>{
         //check form values
         if( isValidMail(mail) && passConfirm === password ){
-            //create the new user data
-            let data = {
-                _id:id,
-                firstName: firstName,
-                lastName: lastName,
-                password: password,
-                job: job,
-                description: description,
-                birthdate: birthdate,
-                mail: mail,
-                localisation: localisation,
-                created :created
-            }
 
-            //request here
-            Axios({
-                method: 'put',
-                url: '/api/admin/'+window.localStorage.getItem("adminId"),
-                headers:{'Authorization':"Bearer "+GetToken() },
-                data: data
-            })
-            .then((res)=>{
-                //refresh infos
-            })
-            .catch(e=>{
-                alert(e)
-            })
+            //send response and log request
+            sendRequest();
+            if(error){
+                console.log(error)
+            }
         }else{
-            //if form isn't valid
-            setErrorMsg("found a problem in form, can't send it")
+            //need to display error message here
         }
     }
 
-
+    //render form here
     let content = <>
         <FormGroup row>
             <Col md={6}>
@@ -140,7 +152,7 @@ const AccountAdminForm = ( props :props ) :React.FunctionComponentElement<props>
         <FormGroup row>
             <Label for="localisation" sm={2}>Localisation</Label>
             <Col sm={10}>
-                <Input type="text" name="localisation" onChange={(e)=>setLocalistion(e.target.value)}  value={localisation} id="localisationInput" placeholder="Localisation" />
+                <Input type="text" name="localisation" onChange={(e)=>setLocalisation(e.target.value)}  value={localisation} id="localisationInput" placeholder="Localisation" />
             </Col>
         </FormGroup>
         <FormGroup row>
@@ -151,7 +163,7 @@ const AccountAdminForm = ( props :props ) :React.FunctionComponentElement<props>
         </FormGroup>
         <FormGroup check row>
         <Col sm={{ size: 2, offset: 5 }}>
-            <Button color="success" onClick={updateAdmin}>Modifier</Button>
+            <Button color="success" onClick={updateAdmin}>{isSending?<Spinner/>:"Modifier"}</Button>
         </Col>
         </FormGroup>
     </>

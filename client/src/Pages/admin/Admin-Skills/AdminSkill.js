@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap';
 
+import ActivityIndicator from '../../../Components/layout/Activity-Indicator/ActivityIndicator'
 import TwoPageBanner from '../../../Components/stateless/banners/TwoPageBanner/TwoPageBanner';
 import Axios from 'axios';
 import AdminSkillList from '../../../Components/Admin/Admin-Skill-List/AdminSkillList';
@@ -73,7 +74,20 @@ export default class AdminSkill extends Component {
         if(error){
             //on error when asking server for admin data disconnect user
             HandleDisconnection();
-        }else{
+            return
+        }
+        if(selectedSkill!==null){
+            
+            return <>
+                <TwoPageBanner 
+                    currentUri="admin-skill"
+                    title="Gérer les compétences"
+                />
+                <ActivityIndicator/>
+                <ComponentModal onClose={this.CleanSelect} title={`modification du skill ${selectedSkill.name}`} component={<SkillForm onClose={this.CleanSelect} data={selectedSkill}  onUpdate={this.getSkillList}/>}/>
+            </> 
+        }
+        else{
         return (
             <div>
                 <TwoPageBanner 
@@ -96,7 +110,6 @@ export default class AdminSkill extends Component {
                             </Col>
                     </Row>
                 </div>
-                {selectedSkill!==null?<ComponentModal onClose={this.CleanSelect} title={`modification du skill ${selectedSkill.name}`} component={<SkillForm onClose={this.CleanSelect} data={selectedSkill}  onUpdate={this.getSkillList}/>}/>:""}
             </div>
         )}
         

@@ -20,6 +20,4 @@ func HandleSocialAPI(e *echo.Group) {
 
 	/* Action routes */
 
-	e.POST("/subscribe-to-newsletter", controllers.HandleNewSubscriber)
-
 }

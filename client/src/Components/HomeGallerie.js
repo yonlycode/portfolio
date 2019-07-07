@@ -10,11 +10,11 @@ export default () => {
             </div>
             <div className="isotope_fillter">
                 <ul className="gallery_filter list">
-                    <li className="active" data-filter="*"><a href="#">All</a></li>
-                    <li data-filter=".brand"><a href="#">Vector</a></li>
-                    <li data-filter=".manipul"><a href="#">Raster</a></li>
-                    <li data-filter=".creative"><a href="#">UI/UX</a></li>
-                    <li data-filter=".design"><a href="#">Printing</a></li>
+                    <li className="active" data-filter="*"><a>All</a></li>
+                    <li data-filter=".brand"><a>Vector</a></li>
+                    <li data-filter=".manipul"><a>Raster</a></li>
+                    <li data-filter=".creative"><a>UI/UX</a></li>
+                    <li data-filter=".design"><a>Printing</a></li>
                 </ul>
             </div>
         </div>
