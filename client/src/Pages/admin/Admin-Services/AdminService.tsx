@@ -4,6 +4,7 @@ import ActivityIndicator from '../../../Components/layout/Activity-Indicator/Act
 import TwoPageBanner from '../../../Components/stateless/banners/TwoPageBanner/TwoPageBanner';
 import ServicesList from '../../../Components/Services-List/ServiceList';
 import HandleDisconnection from '../../../Auth/HandleDisconnection';
+import NoRessourceFounded from '../../../Components/layout/No-Ressource-Founded/NoRessourceFounded';
 
 const AdminService = () => {
 
@@ -20,6 +21,9 @@ const AdminService = () => {
         }
     </>;
 
+    if (data ==null) return <>
+        <NoRessourceFounded/>
+    </>
     //iff auth error with token handle disconnection
     if (error) return <>
         {HandleDisconnection()}
