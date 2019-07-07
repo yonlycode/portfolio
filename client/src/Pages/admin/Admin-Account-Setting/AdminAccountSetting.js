@@ -3,7 +3,7 @@ import { Button, UncontrolledCollapse, Card, CardBody } from 'reactstrap';
 
 
 import TwoPageBanner from '../../../Components/stateless/banners/TwoPageBanner/TwoPageBanner';
-import AdminUserList from '../../../Components/Admin/Admin-User-List/AdminUserList';
+
 import Axios from 'axios';
 import NewAdminForm from '../../../Components/forms/New-Admin-Form/NewAdminForm';
 import AccountAdminForm from '../../../Components/forms/AccountAdminForm/AccountAdminForm';
@@ -11,6 +11,9 @@ import HandleDeleteAccount from '../../../Auth/HandleDeleteAccount';
 import HandleDisconnection from '../../../Auth/HandleDisconnection';
 import GetToken from '../../../Auth/GetToken';
 import GetAdminId from '../../../Auth/GetAdminId';
+
+const AdminUserList = React.lazy(()=>import('../../../Components/Admin/Admin-User-List/AdminUserList'));
+
 
 export default class AdminAccountSetting extends Component {
     constructor(props){

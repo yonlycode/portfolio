@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"portfolio/models"
 	"time"
@@ -51,6 +52,7 @@ func CreateServiceEndPoint(c echo.Context) error {
 	m.ID = bson.NewObjectId()
 	m.Created = time.Now()
 
+	fmt.Println(m)
 	//insert to model to database
 	if err := Dba.InsertService(m); err != nil {
 		return c.String(500, "error : "+err.Error())

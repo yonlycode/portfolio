@@ -3,14 +3,18 @@ import axios from 'axios';
 import GetToken from '../Auth/GetToken';
 
 
-const useHttpGetOnMount = (url :string , dependencies :string[], admin :boolean = false):any[] =>{
+const useHttpGetOnMount = (url :string , dependencies :any[], admin :boolean = false):any[] =>{
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState({});
     const [error, setError] = useState("");
 
+    //reload request
+    const reload = () =>{
+        setIsLoading(true)
+    }
+
     useEffect(()=>{
-        setIsLoading(true);
         let headers = () => {
             if(admin){
                 return {"headers":{'Authorization':"Bearer "+GetToken()}}
@@ -28,9 +32,9 @@ const useHttpGetOnMount = (url :string , dependencies :string[], admin :boolean 
         .then(()=>{
             setIsLoading(false)            
         })
-    },[dependencies])
+    },[isLoading,...dependencies])
 
-    return [isLoading, data, error]
+    return [isLoading, reload, data, error]
 }
 
 

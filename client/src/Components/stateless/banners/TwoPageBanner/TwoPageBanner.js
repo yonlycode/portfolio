@@ -2,7 +2,7 @@ import React from 'react'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import Logo from "../../../../assets/img/logo.png"
 
-export default (props) => {
+ const TwoPageBanner = (props) => {
   return (
     <section className="home_banner_area">
         <div className="container box_1620" style={{display:"flex",flexDirection:"column",alignItems:"center"}}> 
@@ -17,3 +17,5 @@ export default (props) => {
     </section>
   )
 }
+
+export default React.memo(TwoPageBanner);

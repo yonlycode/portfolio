@@ -5,7 +5,7 @@ import "./style.css";
 
 interface props{
     data :{
-        icons :string,
+        icon :string,
         title :string,
         text :string
     }[]
