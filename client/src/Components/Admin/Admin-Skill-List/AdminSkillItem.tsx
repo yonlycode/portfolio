@@ -44,7 +44,7 @@ const AdminSkillItem = (props:itemProps):React.FunctionComponentElement<{}> =>{
             </td>
             <td>{props.data.created}</td>
             <td>
-                <button onClick={()=>props.onUpdate(props.data)} className="btn btn-warning">
+                <button onClick={()=>props.onUpdate(props.data._id)} className="btn btn-warning">
                     <i className="fas fa-cog"></i>
                 </button>
             </td>

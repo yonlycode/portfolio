@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect} from 'react';
+import React from 'react';
 import {useHttpGetOnMount} from '../../../Hooks/useHttp';
 import ActivityIndicator from '../../../Components/layout/Activity-Indicator/ActivityIndicator';
 import TwoPageBanner from '../../../Components/stateless/banners/TwoPageBanner/TwoPageBanner';
@@ -10,26 +10,34 @@ const AdminService = () => {
 
     const [isLoading, reload, data, error] = useHttpGetOnMount('/api/service',[],true)
 
-    //template
-    let content =<>
+    let header = <>
         <TwoPageBanner 
             currentUri="admin-service"
             title="gérer les services"
         />
-        {isLoading&&data?<ActivityIndicator/>:
-            <ServicesList data={data} />
-        }
+    </>
+
+    if(isLoading) return <>
+        {header}
+        <ActivityIndicator/>
+    </>
+
+    let withoutContent =<>
+        {header}
+        <NoRessourceFounded/>
     </>;
 
-    if (data ==null) return <>
-        <NoRessourceFounded/>
-    </>
+    if (data ===null) return withoutContent
     //iff auth error with token handle disconnection
     if (error) return <>
         {HandleDisconnection()}
     </>
 
     //return content
-    return content;
+    return <>
+        {header}
+        <ServicesList data={data} />
+    </>;
 }
+
 export default React.memo(AdminService);

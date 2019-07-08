@@ -140,4 +140,3 @@ const SkillForm = (props :props) :React.FunctionComponentElement<{props:props}>=
 }
 
 export default SkillForm
-
