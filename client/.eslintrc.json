@@ -2,23 +2,33 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest":true
     },
-    "extends": "eslint:recommended",
+    "extends":  [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
+    ],
+    "ecmaFeatures":  {
+        "jsx":  true
+    },
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+    "parserOptions":  {
+        "ecmaVersion":  2018,
+        "sourceType":  "module"
         },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
     "plugins": [
         "react"
     ],
     "rules": {
+        "indent": ["error", 4]
+    },
+    "settings":  {
+        "react":  {
+            "version":  "detect"
+        }
     }
 }
