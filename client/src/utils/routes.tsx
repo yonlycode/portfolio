@@ -2,23 +2,23 @@ import React, { lazy } from 'react';
 
 
 /* Page component lazy import */
-const HomePage = lazy(()=>import('../Pages/user/HomePage'));
-const ContactPage = lazy(()=>import('../Pages/user/ContactPage'));
-const ServicePage = lazy(()=>import('../Pages/user/ServicePage'));
-const AboutMePage = lazy(()=>import('../Pages/user/AboutMePage'));
-const AdminLoginPage = lazy(()=>import('../Pages/admin/Admin-Loggin.js/AdminLoginPage'));
-const WorkPage = lazy(()=>import('../Pages/user/WorkPage'));
-const BlogPage = lazy(()=>import('../Pages/user/BlogPage'));
-const NotFoundPage = lazy(()=>import('../Pages/user/Not-Found-Page/NotFoundPage'))
+const HomePage = lazy(()=>import('../Views/user/HomePage'));
+const ContactPage = lazy(()=>import('../Views/user/ContactPage'));
+const ServicePage = lazy(()=>import('../Views/user/ServicePage'));
+const AboutMePage = lazy(()=>import('../Views/user/AboutMePage'));
+const AdminLoginPage = lazy(()=>import('../Views/admin/Admin-Loggin.js/AdminLoginPage'));
+const WorkPage = lazy(()=>import('../Views/user/WorkPage'));
+const BlogPage = lazy(()=>import('../Views/user/BlogPage'));
+const NotFoundPage = lazy(()=>import('../Views/user/Not-Found-Page/NotFoundPage'))
 
 /* Admin */
-const AdminDashboard = lazy(()=>import('../Pages/admin/Admin-Dashboard/AdminDashboard'))
-const AdminAccountSetting = lazy(()=>import('../Pages/admin/Admin-Account-Setting/AdminAccountSetting'))
-const AdminBlog = lazy(()=>import('../Pages/admin/Admin-Blog/AdminBlog'))
-const AdminPortfolio = lazy(()=>import('../Pages/admin/Admin-Portfolio/AdminPortfolio'))
-const AdminService = lazy(()=>import('../Pages/admin/Admin-Services/AdminService'))
-const AdminSkill = lazy(()=>import('../Pages/admin/Admin-Skills/AdminSkill'))
-const AdminUpload = lazy(()=>import('../Pages/admin/Admin-Upload/AdminUpload'))
+const AdminDashboard = lazy(()=>import('../Views/admin/Admin-Dashboard/AdminDashboard'))
+const AdminAccountSetting = lazy(()=>import('../Views/admin/Admin-Account-Setting/AdminAccountSetting'))
+const AdminBlog = lazy(()=>import('../Views/admin/Admin-Blog/AdminBlog'))
+const AdminPortfolio = lazy(()=>import('../Views/admin/Admin-Portfolio/AdminPortfolio'))
+const AdminService = lazy(()=>import('../Views/admin/Admin-Services/AdminService'))
+const AdminSkill = lazy(()=>import('../Views/admin/Admin-Skills/AdminSkill'))
+const AdminUpload = lazy(()=>import('../Views/admin/Admin-Upload/AdminUpload'))
 
 
 const Routes = [

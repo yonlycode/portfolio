@@ -28,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +44,8 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@txhawks/matchmedia-polyfill": "^0.3.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-react": "^7.14.2",
     "uglify-js-brunch": "^2.10.0"
   }
 }
