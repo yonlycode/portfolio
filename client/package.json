@@ -17,7 +17,8 @@
     "react-test-renderer": "^16.8.6",
     "react-typed": "^1.1.0",
     "reactstrap": "^8.0.0",
-    "typescript": "^3.4.0"
+    "typescript": "^3.4.0",
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,7 +45,6 @@
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "eslint-plugin-react": "^7.14.2",
-    "pre-commit": "^1.2.2",
     "uglify-js-brunch": "^2.10.0"
   },
   "pre-commit": [
