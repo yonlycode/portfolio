@@ -6,18 +6,18 @@ import ActivityIndicator from './Components/layout/Activity-Indicator/ActivityIn
 import ErrorBoundary from './Components/layout/Error-Boundary/ErrorBoundary';
 
 
-const App = () :React.FunctionComponentElement<{}>=>{
-  let content = <>
+const App = (): React.FunctionComponentElement<{}>=>{
+    let content = <>
     <ErrorBoundary>
-      <React.Suspense fallback={ActivityIndicator}>
-        <div className="App">
-          <AppRouter/>
-        </div>
-      </React.Suspense>
+        <React.Suspense fallback={ActivityIndicator}>
+            <div className="App">
+                <AppRouter/>
+            </div>
+        </React.Suspense>
     </ErrorBoundary>
   </>;
 
-  return content;
+    return content;
 }
 
 export default App
